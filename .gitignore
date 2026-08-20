@@ -1,0 +1,17 @@
+node_modules
+.output
+.vercel
+.tanstack
+dist
+*.log
+.env
+.env.*
+.DS_Store
+screenshots
+attachments
+artifacts
+.grok
+AGENTS.md
+AGENTS.project.md
+*.local
+routeTree.gen.ts
