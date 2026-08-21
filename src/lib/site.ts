@@ -8,6 +8,7 @@ export const SITE = {
   email: "rapidrimsllc@gmail.com",
   instagram: "rapidrimsllc",
   instagramUrl: "https://www.instagram.com/rapidrimsllc/",
+  website: "https://www.rapidrimslv.com",
   smsBody:
     "Hi Jack — I'd like a quote on curb rash. Photos attached.",
 } as const;
@@ -64,7 +65,7 @@ export const jsonLd = {
     "Mobile on-car curb rash and wheel scuff repair in Las Vegas. We come to you. The wheel stays on the car.",
   telephone: SITE.phoneTel,
   email: SITE.email,
-  url: SITE.instagramUrl,
+  url: SITE.website,
   areaServed: AREAS.map((name) => ({ "@type": "City", name })),
   priceRange: "$$",
   openingHours: "Mo-Su 08:00-21:00",
