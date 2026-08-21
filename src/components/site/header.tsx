@@ -13,11 +13,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-bg/92 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:h-[4.25rem] sm:px-6">
-        <a
-          href="#top"
-          className="font-display text-[1.35rem] font-semibold tracking-[0.04em] text-fg sm:text-[1.5rem]"
-        >
-          RAPID<span className="text-accent">RIMS</span>
+        <a href="#top" className="flex items-center">
+          <img
+            src="/logo.jpg"
+            alt="RapidRims LLC"
+            className="h-9 w-auto"
+          />
         </a>
         <nav className="ml-6 hidden items-center gap-5 text-sm text-muted lg:flex">
           {links.map((l) => (

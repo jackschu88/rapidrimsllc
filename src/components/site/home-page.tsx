@@ -7,7 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BeforeAfterSlider, BeforeAfterStack } from "@/components/site/before-after";
+import { BeforeAfterStack } from "@/components/site/before-after";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
 import {
@@ -34,29 +34,6 @@ const steps = [
     n: "03",
     title: "We come to you",
     body: "Driveway, work lot, apartment. Wheel stays on. Often about 20 minutes a rim.",
-  },
-];
-
-const gallery = [
-  {
-    before: "/work/black-before.jpg",
-    after: "/work/black-after.jpg",
-    caption: "Gloss black lip, on-car",
-  },
-  {
-    before: "/work/suv-before.jpg",
-    after: "/work/suv-after.jpg",
-    caption: "Matte gray SUV, on-car",
-  },
-  {
-    before: "/work/silver-before.jpg",
-    after: "/work/silver-after.jpg",
-    caption: "Silver five-spoke, light rash",
-  },
-  {
-    before: "/work/turbine-before.jpg",
-    after: "/work/turbine-after.jpg",
-    caption: "Charcoal turbine, on-car",
   },
 ];
 
@@ -96,8 +73,9 @@ function Hero() {
             Curb rash fixed in your driveway.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted sm:text-lg">
-            Wheel stays on the car. No shop drop-off. Often about 20 minutes a
-            rim — a typical set of four is about an hour.
+            For most repairs the wheel stays on the car — no shop drop-off,
+            often about 20 minutes a rim. A typical set of four is about an
+            hour. Want factory-perfect? We also do booth-quality refinishing.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="primary" size="xl" className="sm:min-w-56">
@@ -239,18 +217,19 @@ function Honesty() {
             What to expect
           </p>
           <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            This is driveway work. Not a booth.
+            Driveway speed. Booth finish.
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-[1.05rem] leading-relaxed text-muted">
             <p>
-              The tire and wheel stay mounted. We color-match as close as
-              on-car repair allows. Up close you might see a slight blend,
-              texture, or a small nib. That’s because we don’t pull the wheel
-              or bake it in a paint booth.
+              Most jobs are done right in your driveway. The tire and wheel
+              stay mounted, we color-match on site, and it’s about 20 minutes
+              a rim. When we’re done, the damage is gone.
             </p>
             <p>
-              That’s also why it’s quicker and cheaper than a shop. Most people
-              see about 90–95% of a replacement — without replacement money.
+              Want factory-perfect? We also offer paint-booth-quality
+              refinishing: the wheel comes off and comes back with a flawless,
+              like-new finish. Text us a photo and we’ll recommend the right
+              option.
             </p>
           </div>
           <ul className="mt-8 grid gap-3 text-sm text-fg sm:grid-cols-3">
@@ -281,7 +260,7 @@ function Gallery() {
           Work
         </p>
         <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          Drag to compare.
+          Sanded. Painted. Done.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
           On-car curb rash. Wheel never left the car.
@@ -297,18 +276,6 @@ function Gallery() {
               Real job. Tesla, Las Vegas.
             </figcaption>
           </figure>
-          {gallery.map((g) => (
-            <figure key={g.before} className="min-w-0">
-              <BeforeAfterSlider
-                before={g.before}
-                after={g.after}
-                alt="curb rash repair Las Vegas"
-              />
-              <figcaption className="mt-3 text-sm text-faint">
-                {g.caption}
-              </figcaption>
-            </figure>
-          ))}
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <figure>

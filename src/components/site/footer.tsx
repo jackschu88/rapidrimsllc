@@ -6,9 +6,11 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <p className="font-display text-2xl font-semibold tracking-[0.04em]">
-            RAPID<span className="text-accent">RIMS</span>
-          </p>
+          <img
+            src="/logo.jpg"
+            alt="RapidRims LLC"
+            className="h-10 w-auto"
+          />
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
             Veteran-owned. Mobile on-car curb rash repair. Las Vegas and nearby.
             We come to you.
@@ -71,7 +73,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-faint sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>© {new Date().getFullYear()} {SITE.legalName}. Mobile only.</p>
-          <p>Not a body shop. On-car cosmetic rim repair.</p>
+          <p>Mobile rim repair. Driveway or booth-quality refinishing.</p>
         </div>
       </div>
     </footer>

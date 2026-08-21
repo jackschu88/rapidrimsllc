@@ -10,11 +10,12 @@ function Login() {
   return (
     <main className="grid min-h-dvh place-items-center bg-bg px-6 text-fg">
       <div className="w-full max-w-sm space-y-5">
-        <Link
-          to="/"
-          className="font-display text-2xl font-semibold tracking-[0.04em]"
-        >
-          RAPID<span className="text-accent">RIMS</span>
+        <Link to="/" className="flex justify-center">
+          <img
+            src="/logo.jpg"
+            alt="RapidRims LLC"
+            className="h-12 w-auto"
+          />
         </Link>
         <h1 className="font-display text-3xl font-semibold tracking-tight">
           Sign in
