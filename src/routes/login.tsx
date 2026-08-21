@@ -4,7 +4,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { GROK_PROVIDERS, authEnabled, signIn } from "@/lib/auth/client";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/login")({ component: Login });
+export const Route = createFileRoute("/login")({
+  component: Login,
+  head: () => ({
+    meta: [
+      { title: "Sign in — RapidRims" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
+});
 
 function Login() {
   return (

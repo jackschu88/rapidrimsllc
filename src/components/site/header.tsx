@@ -7,6 +7,7 @@ const links = [
   { href: "#pricing", label: "Pricing" },
   { href: "#work", label: "Work" },
   { href: "#area", label: "Area" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export function SiteHeader() {
@@ -16,7 +17,7 @@ export function SiteHeader() {
         <a href="#top" className="flex items-center">
           <img
             src="/logo.jpg"
-            alt="RapidRims LLC"
+            alt="RapidRims LLC — Las Vegas mobile curb rash repair"
             className="h-9 w-auto"
           />
         </a>

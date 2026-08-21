@@ -12,6 +12,7 @@ import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
 import {
   AREAS,
+  FAQ,
   PRICING,
   SITE,
   jsonLd,
@@ -53,6 +54,7 @@ export function HomePage() {
         <Gallery />
         <Area />
         <About />
+        <Faq />
         <Paint />
         <FinalCta />
       </main>
@@ -70,9 +72,10 @@ function Hero() {
             Las Vegas mobile rim repair
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl lg:text-[4.4rem]">
-            Curb rash fixed in your driveway.
+            Curb rash repair in your driveway.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted sm:text-lg">
+            Mobile on-car rim repair in Las Vegas, Henderson, and Summerlin.
             For most repairs the wheel stays on the car — no shop drop-off,
             often about 20 minutes a rim. A typical set of four is about an
             hour. Want factory-perfect? We also do booth-quality refinishing.
@@ -99,9 +102,11 @@ function Hero() {
           <figure className="relative overflow-hidden rounded-xl bg-surface-2">
             <img
               src="/work/tesla-after.jpg"
-              alt="curb rash repair Las Vegas, after"
+              alt="Tesla wheel after mobile curb rash repair in Las Vegas"
               className="aspect-square w-full object-cover"
               fetchPriority="high"
+              width={800}
+              height={800}
             />
             <figcaption className="absolute top-3 right-3 rounded-sm bg-bg/80 px-2 py-1 text-xs font-medium tracking-wider text-fg uppercase">
               After
@@ -109,8 +114,10 @@ function Hero() {
             <figure className="absolute bottom-3 left-3 w-[44%] max-w-56 overflow-hidden rounded-md border border-fg/25 shadow-lg">
               <img
                 src="/work/tesla-before.jpg"
-                alt="curb rash repair Las Vegas, before"
+                alt="Tesla wheel with curb rash before on-car repair"
                 className="aspect-square w-full object-cover"
+                width={400}
+                height={400}
               />
               <figcaption className="absolute top-2 left-2 rounded-sm bg-bg/80 px-2 py-0.5 text-[11px] font-medium tracking-wider text-fg uppercase">
                 Before
@@ -168,7 +175,8 @@ function Pricing() {
           Clear numbers. No “call for everything.”
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Quote is from photos. These are the typical on-car prices.
+          Typical mobile curb rash repair prices in Las Vegas. Quote is from
+          photos.
         </p>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {PRICING.map((p) => (
@@ -198,7 +206,8 @@ function Pricing() {
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
           Severe damage that needs the wheel pulled, or that we won’t stand
           behind as driveway work: we won’t quote it as an on-car job. We’ll
-          tell you honestly if it’s beyond this.
+          tell you honestly if it’s beyond this — or if booth refinishing is
+          the better call.
         </p>
         <p className="mt-6 text-sm text-faint">
           Cash preferred. Card can be arranged if needed.
@@ -260,17 +269,17 @@ function Gallery() {
           Work
         </p>
         <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          Sanded. Painted. Done.
+          Curb rash before and after.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          On-car curb rash. Wheel never left the car.
+          On-car curb rash in Las Vegas. Wheel never left the car.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <figure className="min-w-0 md:col-span-2">
             <BeforeAfterStack
               before="/work/tesla-before.jpg"
               after="/work/tesla-after.jpg"
-              alt="curb rash repair Las Vegas"
+              alt="Tesla curb rash repair Las Vegas"
             />
             <figcaption className="mt-3 text-sm text-faint">
               Real job. Tesla, Las Vegas.
@@ -281,8 +290,10 @@ function Gallery() {
           <figure>
             <img
               src="/work/process-sand.jpg"
-              alt="curb rash repair Las Vegas"
+              alt="Sanding curb rash on a wheel in a Las Vegas driveway"
               className="aspect-[4/3] w-full rounded-lg object-cover"
+              width={800}
+              height={600}
             />
             <figcaption className="mt-3 text-sm text-faint">
               Sanded on the car, in the driveway.
@@ -291,11 +302,13 @@ function Gallery() {
           <figure>
             <img
               src="/work/process-paint.jpg"
-              alt="curb rash repair Las Vegas"
+              alt="Color-matching paint on a rim during mobile curb rash repair"
               className="aspect-[4/3] w-full rounded-lg object-cover"
+              width={800}
+              height={600}
             />
             <figcaption className="mt-3 text-sm text-faint">
-              Color-matched on site. Not a booth refinish.
+              Color-matched on site.
             </figcaption>
           </figure>
         </div>
@@ -312,9 +325,10 @@ function Area() {
           Service area
         </p>
         <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          Las Vegas and nearby.
+          Las Vegas, Henderson, Summerlin.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
+          Mobile curb rash and rim scuff repair across the southwest valley.
           Evenings and weekends. Text anytime — I answer fast.
         </p>
         <ul className="mt-8 flex flex-wrap gap-2">
@@ -328,7 +342,7 @@ function Area() {
           ))}
         </ul>
         <p className="mt-6 text-sm text-faint">
-          Southwest valley and surrounding. If you’re close, ask.
+          Also Spring Valley and Enterprise. If you’re close, ask.
         </p>
       </div>
     </section>
@@ -348,11 +362,11 @@ function About() {
         <div className="mt-6 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-muted">
           <p>
             RapidRims LLC is veteran-owned. Jack comes to your driveway,
-            apartment lot, or workplace.
+            apartment lot, or workplace in Las Vegas.
           </p>
           <p>
-            This is on-car cosmetic rim repair. Fast. Local. No shop, no
-            drop-off, no wait in a lobby.
+            This is on-car cosmetic rim repair. Fast. Local. No shop lobby —
+            and booth-quality refinishing when you want the wheel off.
           </p>
         </div>
         <a
@@ -364,6 +378,36 @@ function About() {
           <Instagram className="size-4" />
           More work on Instagram @{SITE.instagram}
         </a>
+      </div>
+    </section>
+  );
+}
+
+function Faq() {
+  return (
+    <section id="faq" className="border-b border-border">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <p className="text-xs font-medium tracking-[0.18em] text-muted uppercase">
+          FAQ
+        </p>
+        <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          Curb rash repair, straight answers.
+        </h2>
+        <dl className="mt-10 grid gap-4 md:grid-cols-2">
+          {FAQ.map((item) => (
+            <div
+              key={item.q}
+              className="rounded-xl border border-border bg-surface p-6"
+            >
+              <dt className="font-display text-xl font-semibold tracking-tight">
+                {item.q}
+              </dt>
+              <dd className="mt-2 text-sm leading-relaxed text-muted">
+                {item.a}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

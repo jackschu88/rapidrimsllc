@@ -6,23 +6,36 @@ import {
 } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
+import { SITE } from "@/lib/site";
 import appCss from "../styles.css?url";
-
-const APP_NAME = "RapidRims";
-const DESCRIPTION =
-  "Las Vegas mobile curb rash repair. We come to you. Wheel stays on the car. About 20 minutes a rim. Call or text (612) 219-5065.";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${APP_NAME} — Las Vegas mobile curb rash repair` },
-      { name: "description", content: DESCRIPTION },
+      { title: SITE.title },
+      { name: "description", content: SITE.description },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "author", content: SITE.legalName },
+      { name: "geo.region", content: "US-NV" },
+      { name: "geo.placename", content: SITE.city },
       { name: "theme-color", content: "#0c0c0d" },
-      { name: "application-name", content: APP_NAME },
+      { name: "application-name", content: SITE.name },
+      { property: "og:title", content: SITE.title },
+      { property: "og:description", content: SITE.description },
+      { property: "og:url", content: SITE.website },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:site_name", content: SITE.legalName },
+      { property: "og:image", content: `${SITE.website}/og.jpg` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SITE.title },
+      { name: "twitter:description", content: SITE.description },
+      { name: "twitter:image", content: `${SITE.website}/og.jpg` },
     ],
     links: [
+      { rel: "canonical", href: SITE.website },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {

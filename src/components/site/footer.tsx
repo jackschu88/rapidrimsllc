@@ -12,8 +12,13 @@ export function SiteFooter() {
             className="h-10 w-auto"
           />
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
-            Veteran-owned. Mobile on-car curb rash repair. Las Vegas and nearby.
-            We come to you.
+            RapidRims LLC. Veteran-owned. Mobile on-car curb rash repair in
+            Las Vegas, Nevada. We come to you.
+          </p>
+          <p className="mt-3 text-sm text-faint">
+            Las Vegas, NV
+            <br />
+            {SITE.phonePretty}
           </p>
         </div>
         <div>
@@ -72,7 +77,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-faint sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} {SITE.legalName}. Mobile only.</p>
+          <p>© {new Date().getFullYear()} {SITE.legalName}. Las Vegas, Nevada.</p>
           <p>Mobile rim repair. Driveway or booth-quality refinishing.</p>
         </div>
       </div>
