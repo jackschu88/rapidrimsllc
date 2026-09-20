@@ -1,35 +1,29 @@
+import { Link } from "@tanstack/react-router";
 import { Phone, MessageSquare } from "lucide-react";
-import { SITE, smsHref, telHref } from "@/lib/site";
+import { NAV, SITE, smsHref, telHref } from "@/lib/site";
 import { Button } from "@/components/ui/button";
-
-const links = [
-  { href: "#how", label: "How it works" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#work", label: "Work" },
-  { href: "#area", label: "Area" },
-  { href: "#faq", label: "FAQ" },
-];
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-bg/92 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:h-[4.25rem] sm:px-6">
-        <a href="#top" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src="/logo.jpg"
             alt="RapidRims LLC — Las Vegas mobile curb rash repair"
             className="h-9 w-auto"
           />
-        </a>
+        </Link>
         <nav className="ml-6 hidden items-center gap-5 text-sm text-muted lg:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="transition-colors hover:text-fg"
+          {NAV.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className="transition-colors hover:text-fg [&.active]:text-fg"
+              activeOptions={{ exact: l.to === "/" }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">

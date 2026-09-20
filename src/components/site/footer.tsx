@@ -1,16 +1,13 @@
+import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
-import { SITE, mailHref, smsHref, telHref } from "@/lib/site";
+import { NAV, SITE, mailHref, smsHref, telHref } from "@/lib/site";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <img
-            src="/logo.jpg"
-            alt="RapidRims LLC"
-            className="h-10 w-auto"
-          />
+          <img src="/logo.jpg" alt="RapidRims LLC" className="h-10 w-auto" />
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
             RapidRims LLC. Veteran-owned. Mobile on-car curb rash repair in
             Las Vegas, Nevada. We come to you.
@@ -20,6 +17,13 @@ export function SiteFooter() {
             <br />
             {SITE.phonePretty}
           </p>
+          <nav className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted">
+            {NAV.map((l) => (
+              <Link key={l.to} to={l.to} className="hover:text-accent">
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
         <div>
           <p className="text-xs font-medium tracking-[0.16em] text-faint uppercase">
@@ -77,7 +81,9 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-faint sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} {SITE.legalName}. Las Vegas, Nevada.</p>
+          <p>
+            © {new Date().getFullYear()} {SITE.legalName}. Las Vegas, Nevada.
+          </p>
           <p>Mobile rim repair. Driveway or booth-quality refinishing.</p>
         </div>
       </div>
