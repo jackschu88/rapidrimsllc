@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import {
   Clock,
   Instagram,
@@ -10,8 +11,9 @@ import { Button } from "@/components/ui/button";
 import { BeforeAfterStack } from "@/components/site/before-after";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { JsonLd } from "@/components/site/json-ld";
+import { ServiceCities } from "@/components/site/service-cities";
 import {
-  AREAS,
   FAQ,
   PRICING,
   SITE,
@@ -41,10 +43,7 @@ const steps = [
 export function HomePage() {
   return (
     <div id="top" className="min-h-dvh bg-bg text-fg">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <SiteHeader />
       <main>
         <Hero />
@@ -282,7 +281,10 @@ function Gallery() {
               alt="Tesla curb rash repair Las Vegas"
             />
             <figcaption className="mt-3 text-sm text-faint">
-              Real job. Tesla, Las Vegas.
+              Real job. Tesla, Las Vegas.{" "}
+              <Link to="/tesla-wheel-repair" className="hover:text-accent">
+                Tesla wheel repair
+              </Link>
             </figcaption>
           </figure>
         </div>
@@ -331,18 +333,10 @@ function Area() {
           Mobile curb rash and rim scuff repair across the southwest valley.
           Evenings and weekends. Text anytime — I answer fast.
         </p>
-        <ul className="mt-8 flex flex-wrap gap-2">
-          {AREAS.map((a) => (
-            <li
-              key={a}
-              className="rounded-full border border-border bg-surface px-4 py-2 text-sm"
-            >
-              {a}
-            </li>
-          ))}
-        </ul>
+        <ServiceCities />
         <p className="mt-6 text-sm text-faint">
-          Also Spring Valley and Enterprise. If you’re close, ask.
+          Also Spring Valley, Enterprise, and North Las Vegas. If you’re close,
+          ask.
         </p>
       </div>
     </section>

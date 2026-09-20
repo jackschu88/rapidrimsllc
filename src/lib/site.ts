@@ -9,6 +9,7 @@ export const SITE = {
   instagram: "rapidrimsllc",
   instagramUrl: "https://www.instagram.com/rapidrimsllc/",
   website: "https://www.rapidrimslv.com",
+  canonicalOrigin: "https://www.rapidrimslv.com",
   smsBody: "Hi Jack — I'd like a quote on curb rash. Photos attached.",
   city: "Las Vegas",
   region: "NV",
@@ -30,9 +31,26 @@ export function mailHref() {
   return `mailto:${SITE.email}`;
 }
 
+export function canonicalUrl(path: string) {
+  if (path === "/") return SITE.canonicalOrigin;
+  return `${SITE.canonicalOrigin}${path}`;
+}
+
+export function pageHead(title: string, description: string, path: string) {
+  return {
+    meta: [
+      { title },
+      { name: "description" as const, content: description },
+      { name: "robots" as const, content: "index, follow" },
+    ],
+    links: [{ rel: "canonical" as const, href: canonicalUrl(path) }],
+  };
+}
+
 export const AREAS = [
   "Las Vegas",
   "Henderson",
+  "North Las Vegas",
   "Summerlin",
   "Spring Valley",
   "Enterprise",
@@ -65,6 +83,14 @@ export const PRICING = [
   },
 ] as const;
 
+export const NAV = [
+  { to: "/", label: "Home" },
+  { to: "/curb-rash-repair", label: "Curb rash" },
+  { to: "/mobile-rim-repair-las-vegas", label: "Mobile" },
+  { to: "/service-area", label: "Service area" },
+  { to: "/pricing", label: "Pricing" },
+] as const;
+
 export const FAQ = [
   {
     q: "How much does curb rash repair cost in Las Vegas?",
@@ -72,11 +98,11 @@ export const FAQ = [
   },
   {
     q: "Do you come to Henderson and Summerlin?",
-    a: "Yes. Mobile curb rash repair in Las Vegas, Henderson, Summerlin, Spring Valley, and Enterprise. Evenings and weekends. If you’re close to the southwest valley, ask.",
+    a: "Yes. Mobile curb rash repair in Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise. Evenings and weekends. If you’re close to the southwest valley, ask.",
   },
   {
     q: "Do you take the wheel off the car?",
-    a: "Most curb rash is fixed on the car, in your driveway — about 20 minutes a rim. Want factory-perfect? We also do booth-quality refinishing: the wheel comes off and comes back like new. Text a photo and we’ll recommend the right option.",
+    a: "Most curb rash is fixed on the car, in the driveway — about 20 minutes a rim. Want factory-perfect? We also do booth-quality refinishing: the wheel comes off and comes back like new. Text a photo and we’ll recommend the right option.",
   },
   {
     q: "How long does mobile rim repair take?",
@@ -84,7 +110,7 @@ export const FAQ = [
   },
   {
     q: "Can you fix Tesla curb rash?",
-    a: "Yes. Painted Tesla wheels are a regular job — Model 3, Model Y, and similar. Text photos for a quote.",
+    a: "Yes. Painted Tesla wheels are a regular job. Text photos for a quote. Real job photos are on the Tesla wheel repair page.",
   },
   {
     q: "How do I get a quote?",
@@ -99,6 +125,77 @@ export const FAQ = [
     a: "Yes. 10% off with ID, on top of the listed prices.",
   },
 ] as const;
+
+export type FaqItem = { q: string; a: string };
+
+export const CURB_RASH_FAQS: FaqItem[] = [
+  {
+    q: "What is curb rash?",
+    a: "Cosmetic scuffs and gouges on the wheel lip from hitting a curb. That is what on-car repair is for.",
+  },
+  {
+    q: "Does the wheel come off?",
+    a: "For this work, no. The wheel stays on the car. We sand, fill if needed, and color-match in the driveway.",
+  },
+  {
+    q: "Can you fix a bent wheel or a crack?",
+    a: "Send a photo. Structural damage or a crack may need a shop or a replacement — that is not an on-car cosmetic job.",
+  },
+  {
+    q: "How do I get a quote?",
+    a: "Text photos of the lip — close and from a step back. The real number is from the photos.",
+  },
+];
+
+export const MOBILE_FAQS: FaqItem[] = [
+  {
+    q: "Do you come to me?",
+    a: "Yes. One tech, mobile only. Driveway, work lot, or apartment in the Las Vegas Valley.",
+  },
+  {
+    q: "How long does a rim take?",
+    a: "Often about 20 minutes a rim. A typical set of four is about an hour.",
+  },
+  {
+    q: "What cities do you cover?",
+    a: "Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise. If you are close, ask.",
+  },
+  {
+    q: "How do I book?",
+    a: "Text photos for a quote. Same number for call or text. Evenings and weekends.",
+  },
+];
+
+export const PRICING_FAQS: FaqItem[] = [
+  {
+    q: "How much is curb rash repair?",
+    a: "Light (1–2 lip spots) is $100 per rim. Heavier on-car with filler is $125–$150 per rim. Two or more on the same visit are $90–$100 each.",
+  },
+  {
+    q: "Is there a veteran discount?",
+    a: "Yes. 10% off with ID. That sits on top of the prices above — we don’t advertise $80 rims.",
+  },
+  {
+    q: "Is the website price the final price?",
+    a: "Those are the typical on-car prices. The real number is from photos. Some jobs are beyond on-car — we will say so.",
+  },
+  {
+    q: "What payment do you take?",
+    a: "Cash is preferred. Card or other can be arranged if you need it. No online checkout.",
+  },
+];
+
+export function faqJsonLd(items: readonly FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}
 
 const businessId = `${SITE.website}#business`;
 const websiteId = `${SITE.website}#website`;
@@ -137,6 +234,26 @@ export const jsonLd = {
         "Tesla curb rash",
       ],
       slogan: SITE.tagline,
+      makesOffer: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "On-car curb rash repair",
+            description:
+              "Cosmetic wheel lip repair. The wheel stays on the car. Quote from photos.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Mobile rim repair",
+            description:
+              "One-tech mobile cosmetic lip repair in the Las Vegas Valley. We come to you.",
+          },
+        },
+      ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "On-car curb rash repair",
