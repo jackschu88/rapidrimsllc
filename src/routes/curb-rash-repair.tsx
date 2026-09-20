@@ -44,9 +44,9 @@ function CurbRashRepair() {
           </h2>
           <div className="mt-6 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-muted">
             <p>
-              Most jobs are 1–2 spots on the lip, or a heavier stretch that
-              needs filler. We sand, fill if needed, and color-match on site.
-              Often about 20 minutes a rim.
+              Most jobs are 1–2 spots on the lip, or a heavier stretch. We
+              grind, sand, polish or paint on site. Often about 20 minutes a
+              rim.
             </p>
             <p>
               This is cosmetic. Bent wheels or leaks: send a photo. Structural
