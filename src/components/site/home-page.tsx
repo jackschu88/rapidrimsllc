@@ -230,8 +230,8 @@ function Honesty() {
           <div className="mt-6 max-w-3xl space-y-4 text-[1.05rem] leading-relaxed text-muted">
             <p>
               Most jobs are done right in your driveway. The tire and wheel
-              stay mounted, we color-match on site, and it’s about 20 minutes
-              a rim. When we’re done, the damage is gone.
+              stay mounted. We grind, sand, polish or paint on site, and it’s
+              about 20 minutes a rim. When we’re done, the damage is gone.
             </p>
             <p>
               Want factory-perfect? We also offer paint-booth-quality

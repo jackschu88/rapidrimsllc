@@ -67,7 +67,7 @@ export const PRICING = [
   },
   {
     name: "Heavier on-car",
-    detail: "More of the lip, needs filler",
+    detail: "More of the lip — grind, sand, polish or paint",
     price: "$125–$150",
     priceValue: "125",
     unit: "per rim",
@@ -94,7 +94,7 @@ export const NAV = [
 export const FAQ = [
   {
     q: "How much does curb rash repair cost in Las Vegas?",
-    a: "Typical on-car prices: $100 a rim for light rash, $125–$150 if it needs filler, $90–$100 each when we do two or more on the same visit. Quote is from photos. Military and veteran: 10% off with ID.",
+    a: "Typical on-car prices: $100 a rim for light rash, $125–$150 for heavier grind, sand, polish or paint, $90–$100 each when we do two or more on the same visit. Quote is from photos. Military and veteran: 10% off with ID.",
   },
   {
     q: "Do you come to Henderson and Summerlin?",
@@ -135,7 +135,7 @@ export const CURB_RASH_FAQS: FaqItem[] = [
   },
   {
     q: "Does the wheel come off?",
-    a: "For this work, no. The wheel stays on the car. We sand, fill if needed, and color-match in the driveway.",
+    a: "For this work, no. The wheel stays on the car. We grind, sand, polish or paint in the driveway.",
   },
   {
     q: "Can you fix a bent wheel or a crack?",
@@ -169,7 +169,7 @@ export const MOBILE_FAQS: FaqItem[] = [
 export const PRICING_FAQS: FaqItem[] = [
   {
     q: "How much is curb rash repair?",
-    a: "Light (1–2 lip spots) is $100 per rim. Heavier on-car with filler is $125–$150 per rim. Two or more on the same visit are $90–$100 each.",
+    a: "Light (1–2 lip spots) is $100 per rim. Heavier on-car (grind, sand, polish or paint) is $125–$150 per rim. Two or more on the same visit are $90–$100 each.",
   },
   {
     q: "Is there a veteran discount?",

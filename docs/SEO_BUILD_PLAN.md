@@ -27,7 +27,7 @@ One-tech mobile on-car curb rash / cosmetic lip repair. Wheel stays on. Photo qu
 ## Prices (keep exact)
 
 - Light (1–2 lip spots): $100/rim
-- Heavier on-car (filler): $125–$150/rim
+- Heavier on-car (grind, sand, polish or paint): $125–$150/rim
 - Two+ same visit: $90–$100 each
 - Veteran 10% with ID
 - Real number is from photos. Some jobs are beyond on-car — say that.
