@@ -20,6 +20,8 @@ export function BeforeAfterStack({
           src={before}
           alt={`${alt}, before`}
           className="aspect-[4/3] h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
         <figcaption className="absolute top-3 left-3 rounded-sm bg-bg/80 px-2 py-1 text-[11px] font-medium tracking-wider text-fg uppercase">
           Before
@@ -30,6 +32,8 @@ export function BeforeAfterStack({
           src={after}
           alt={`${alt}, after`}
           className="aspect-[4/3] h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
         <figcaption className="absolute top-3 right-3 rounded-sm bg-bg/80 px-2 py-1 text-[11px] font-medium tracking-wider text-fg uppercase">
           After

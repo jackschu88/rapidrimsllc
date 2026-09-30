@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { FaqList } from "@/components/site/faq-list";
+import { PhotoGuide } from "@/components/site/photo-guide";
 import { PublicPage } from "@/components/site/public-page";
 import { QuoteCta } from "@/components/site/quote-cta";
 import { ServiceCities } from "@/components/site/service-cities";
@@ -22,7 +23,10 @@ export const Route = createFileRoute("/mobile-rim-repair-las-vegas")({
 
 function MobileRimRepair() {
   return (
-    <PublicPage jsonLd={[jsonLd, faqJsonLd(MOBILE_FAQS)]}>
+    <PublicPage
+      jsonLd={[jsonLd, faqJsonLd(MOBILE_FAQS)]}
+      crumb={{ label: "Mobile rim repair", path: "/mobile-rim-repair-las-vegas" }}
+    >
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
           <p className="text-xs font-medium tracking-[0.18em] text-muted uppercase">
@@ -50,8 +54,13 @@ function MobileRimRepair() {
               on-car.”
             </p>
             <p>
-              Then we come to you. The wheel stays on. Evenings and weekends.
-              Same number for call or text.
+              Then we come to you. The wheel stays on. Often about 20 minutes
+              a rim, about an hour for a set of four. Evenings and weekends.
+              Same number for call or text.{" "}
+              <Link to="/pricing" className="text-fg hover:text-accent">
+                See typical prices
+              </Link>
+              .
             </p>
           </div>
           <ServiceCities />
@@ -60,6 +69,8 @@ function MobileRimRepair() {
           </p>
         </div>
       </section>
+
+      <PhotoGuide />
 
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">

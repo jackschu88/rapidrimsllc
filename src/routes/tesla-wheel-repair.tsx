@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { BeforeAfterStack } from "@/components/site/before-after";
 import { PublicPage } from "@/components/site/public-page";
 import { QuoteCta } from "@/components/site/quote-cta";
@@ -16,7 +16,10 @@ export const Route = createFileRoute("/tesla-wheel-repair")({
 
 function TeslaWheelRepair() {
   return (
-    <PublicPage jsonLd={jsonLd}>
+    <PublicPage
+      jsonLd={jsonLd}
+      crumb={{ label: "Tesla wheel repair", path: "/tesla-wheel-repair" }}
+    >
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
           <p className="text-xs font-medium tracking-[0.18em] text-muted uppercase">
@@ -26,9 +29,14 @@ function TeslaWheelRepair() {
             Tesla curb rash, on the car.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-            Same mobile lip repair as every other job. This page exists because
-            we have real Tesla photos from a Las Vegas driveway — not a brand
-            farm.
+            Same mobile lip repair as every other job. Painted Tesla wheels,
+            on the car, in the Las Vegas Valley. This page exists because we
+            have real Tesla photos from a driveway — not a brand farm. Same
+            prices as the{" "}
+            <Link to="/pricing" className="text-fg hover:text-accent">
+              pricing page
+            </Link>
+            . The number still comes from your photos.
           </p>
         </div>
       </section>

@@ -4,7 +4,7 @@ import { NAV, SITE, mailHref, smsHref, telHref } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="border-t border-border bg-surface pb-24 md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
           <img src="/logo.jpg" alt="RapidRims LLC" className="h-10 w-auto" />
@@ -23,6 +23,9 @@ export function SiteFooter() {
                 {l.label}
               </Link>
             ))}
+            <Link to="/tesla-wheel-repair" className="hover:text-accent">
+              Tesla wheels
+            </Link>
           </nav>
         </div>
         <div>

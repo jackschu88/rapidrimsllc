@@ -41,7 +41,6 @@ export function pageHead(title: string, description: string, path: string) {
     meta: [
       { title },
       { name: "description" as const, content: description },
-      { name: "robots" as const, content: "index, follow" },
     ],
     links: [{ rel: "canonical" as const, href: canonicalUrl(path) }],
   };
@@ -54,6 +53,39 @@ export const AREAS = [
   "Summerlin",
   "Spring Valley",
   "Enterprise",
+] as const;
+
+export const AREA_DETAILS = [
+  {
+    slug: "las-vegas",
+    name: "Las Vegas",
+    body: "Driveways, apartment lots, and work lots in Las Vegas. On-car curb rash and rim scuffs. Text a photo.",
+  },
+  {
+    slug: "henderson",
+    name: "Henderson",
+    body: "Henderson, including Green Valley and the west side toward the valley. Same on-car repair, same prices. We come to you.",
+  },
+  {
+    slug: "north-las-vegas",
+    name: "North Las Vegas",
+    body: "North Las Vegas. Evenings and weekends. If you are near the north end of the valley, text and ask.",
+  },
+  {
+    slug: "summerlin",
+    name: "Summerlin",
+    body: "Summerlin driveways, including gated communities. A shop drop-off is the hassle. The wheel stays on the car.",
+  },
+  {
+    slug: "spring-valley",
+    name: "Spring Valley",
+    body: "Spring Valley and the southwest side. Apartment lots included. One tech, mobile only.",
+  },
+  {
+    slug: "enterprise",
+    name: "Enterprise",
+    body: "Enterprise and the southern valley. If you are close and not named on this page, ask.",
+  },
 ] as const;
 
 export const PRICING = [
@@ -114,7 +146,23 @@ export const FAQ = [
   },
   {
     q: "How do I get a quote?",
-    a: "Text close-up photos of the damaged lip to (612) 219-5065. Same number for calls. No account, no online checkout.",
+    a: "Text two photos per wheel — close on the rash, and one of the whole wheel — to (612) 219-5065. Say which city you’re in. Same number for calls. No account, no online checkout.",
+  },
+  {
+    q: "What photos should I text?",
+    a: "Close on the damaged lip, then the whole wheel from a step back. Add the city: Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, or Enterprise. The number comes from those photos.",
+  },
+  {
+    q: "Is curb rash worth repairing?",
+    a: "On a wheel you are keeping, usually yes. Light lip rash is $100 a rim, on the car, about 20 minutes. Replacing the wheel means a shop visit and more money. If the photo shows a bend or a crack, we will say this is not an on-car job.",
+  },
+  {
+    q: "Can you repair alloy wheels with the tire still on?",
+    a: "Yes. That is the usual job. The wheel stays on the car. We grind, sand, polish or paint the lip in the driveway, a work lot, or an apartment lot.",
+  },
+  {
+    q: "Do you work at apartments and gated communities?",
+    a: "Yes. Apartment lots and gated driveways in the Las Vegas Valley. Text the photos and where to meet.",
   },
   {
     q: "Do you take cash or card?",
@@ -143,7 +191,11 @@ export const CURB_RASH_FAQS: FaqItem[] = [
   },
   {
     q: "How do I get a quote?",
-    a: "Text photos of the lip — close and from a step back. The real number is from the photos.",
+    a: "Text photos of the lip — close and from a step back — and the city you’re in. The real number is from the photos.",
+  },
+  {
+    q: "Is it worth fixing before I sell the car?",
+    a: "If the rash is on the lip and the wheel is straight, on-car repair is the cheap way to make it look right. Text the photos. If it is bent or cracked, we will not pretend an on-car job fixes that.",
   },
 ];
 
@@ -163,6 +215,10 @@ export const MOBILE_FAQS: FaqItem[] = [
   {
     q: "How do I book?",
     a: "Text photos for a quote. Same number for call or text. Evenings and weekends.",
+  },
+  {
+    q: "Do you work in apartment lots?",
+    a: "Yes. Driveway, work lot, or apartment. Tell me where to park and meet you.",
   },
 ];
 
@@ -185,6 +241,42 @@ export const PRICING_FAQS: FaqItem[] = [
   },
 ];
 
+export const SERVICE_AREA_FAQS: FaqItem[] = [
+  {
+    q: "Do you charge extra to drive to Henderson or Summerlin?",
+    a: "The prices on the pricing page are the typical on-car prices, per rim. The real number is from photos. Text the city with the photos.",
+  },
+  {
+    q: "How soon can you get here?",
+    a: "Text the photos. I’ll tell you when I can be there. Evenings and weekends are normal.",
+  },
+  {
+    q: "Is there a different number for each city?",
+    a: "No. One tech, one number: (612) 219-5065. Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise.",
+  },
+];
+
+export function breadcrumbJsonLd(label: string, path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE.website,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: label,
+        item: canonicalUrl(path),
+      },
+    ],
+  };
+}
+
 export function faqJsonLd(items: readonly FaqItem[]) {
   return {
     "@context": "https://schema.org",
@@ -199,7 +291,11 @@ export function faqJsonLd(items: readonly FaqItem[]) {
 
 const businessId = `${SITE.website}#business`;
 const websiteId = `${SITE.website}#website`;
-const serviceId = `${SITE.website}#curb-rash-repair`;
+
+const areaServed = AREAS.map((name) => ({
+  "@type": "Place",
+  name: `${name}, Nevada`,
+}));
 
 export const jsonLd = {
   "@context": "https://schema.org",
@@ -225,18 +321,29 @@ export const jsonLd = {
         addressRegion: SITE.region,
         addressCountry: SITE.country,
       },
-      areaServed: AREAS.map((name) => ({ "@type": "City", name })),
+      areaServed,
+      serviceArea: {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+          "@type": "GeoCoordinates",
+          latitude: 36.1716,
+          longitude: -115.1391,
+        },
+        geoRadius: 40000,
+      },
       sameAs: [SITE.instagramUrl],
       knowsAbout: [
         "curb rash repair",
         "mobile rim repair",
         "on-car wheel repair",
+        "alloy wheel scuff repair",
         "Tesla curb rash",
       ],
       slogan: SITE.tagline,
       makesOffer: [
         {
           "@type": "Offer",
+          url: `${SITE.website}/curb-rash-repair`,
           itemOffered: {
             "@type": "Service",
             name: "On-car curb rash repair",
@@ -246,11 +353,22 @@ export const jsonLd = {
         },
         {
           "@type": "Offer",
+          url: `${SITE.website}/mobile-rim-repair-las-vegas`,
           itemOffered: {
             "@type": "Service",
             name: "Mobile rim repair",
             description:
               "One-tech mobile cosmetic lip repair in the Las Vegas Valley. We come to you.",
+          },
+        },
+        {
+          "@type": "Offer",
+          url: `${SITE.website}/tesla-wheel-repair`,
+          itemOffered: {
+            "@type": "Service",
+            name: "Tesla curb rash repair",
+            description:
+              "On-car cosmetic lip repair for Tesla wheels in Las Vegas. Quote from photos.",
           },
         },
       ],
@@ -268,12 +386,30 @@ export const jsonLd = {
     },
     {
       "@type": "Service",
-      "@id": serviceId,
-      name: "Mobile curb rash repair",
-      serviceType: "On-car curb rash and rim scuff repair",
+      "@id": `${SITE.website}/curb-rash-repair#service`,
+      name: "On-car curb rash repair",
+      serviceType: "Curb rash and rim scuff repair",
       provider: { "@id": businessId },
-      areaServed: AREAS.map((name) => ({ "@type": "City", name })),
-      url: SITE.website,
+      areaServed,
+      url: `${SITE.website}/curb-rash-repair`,
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE.website}/mobile-rim-repair-las-vegas#service`,
+      name: "Mobile rim repair",
+      serviceType: "Mobile on-car wheel lip repair",
+      provider: { "@id": businessId },
+      areaServed,
+      url: `${SITE.website}/mobile-rim-repair-las-vegas`,
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE.website}/tesla-wheel-repair#service`,
+      name: "Tesla curb rash repair",
+      serviceType: "On-car Tesla wheel lip repair",
+      provider: { "@id": businessId },
+      areaServed,
+      url: `${SITE.website}/tesla-wheel-repair`,
     },
     {
       "@type": "WebSite",
@@ -283,18 +419,6 @@ export const jsonLd = {
       description: SITE.description,
       publisher: { "@id": businessId },
       inLanguage: "en-US",
-    },
-    {
-      "@type": "FAQPage",
-      "@id": `${SITE.website}#faq`,
-      mainEntity: FAQ.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.a,
-        },
-      })),
     },
   ],
 };

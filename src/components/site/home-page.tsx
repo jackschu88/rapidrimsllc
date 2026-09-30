@@ -17,16 +17,52 @@ import {
   FAQ,
   PRICING,
   SITE,
+  faqJsonLd,
   jsonLd,
   smsHref,
   telHref,
 } from "@/lib/site";
 
+const JOBS = [
+  {
+    before: "/work/tesla-before.jpg",
+    after: "/work/tesla-after.jpg",
+    alt: "Tesla curb rash repair in a Las Vegas driveway",
+    caption: "Tesla, Las Vegas. Wheel stayed on.",
+    to: "/tesla-wheel-repair",
+    link: "Tesla wheel repair",
+  },
+  {
+    before: "/work/black-before.jpg",
+    after: "/work/black-after.jpg",
+    alt: "Black alloy wheel curb rash repair in a Las Vegas driveway",
+    caption: "Black alloy. Lip rash repaired on the car.",
+  },
+  {
+    before: "/work/silver-before.jpg",
+    after: "/work/silver-after.jpg",
+    alt: "Silver alloy wheel scuff repair in Las Vegas",
+    caption: "Silver face. Scuffed lip repaired on the car.",
+  },
+  {
+    before: "/work/suv-before.jpg",
+    after: "/work/suv-after.jpg",
+    alt: "SUV wheel curb rash repair in a Las Vegas parking lot",
+    caption: "SUV, apartment lot. On-car.",
+  },
+  {
+    before: "/work/turbine-before.jpg",
+    after: "/work/turbine-after.jpg",
+    alt: "Turbine-style wheel curb rash repair in Las Vegas",
+    caption: "Turbine-style wheel. Driveway.",
+  },
+] as const;
+
 const steps = [
   {
     n: "01",
     title: "Text photos",
-    body: "Shoot the damaged lip — close and from a step back. Text them to Jack.",
+    body: "Close on the rash, and one of the whole wheel. Say the city. Text them to Jack.",
   },
   {
     n: "02",
@@ -44,6 +80,7 @@ export function HomePage() {
   return (
     <div id="top" className="min-h-dvh bg-bg text-fg">
       <JsonLd data={jsonLd} />
+      <JsonLd data={faqJsonLd(FAQ)} />
       <SiteHeader />
       <main>
         <Hero />
@@ -271,22 +308,34 @@ function Gallery() {
           Curb rash before and after.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          On-car curb rash in Las Vegas. Wheel never left the car.
+          On-car curb rash in Las Vegas. Wheel never left the car. Prices are
+          on the{" "}
+          <Link to="/pricing" className="hover:text-accent">
+            pricing page
+          </Link>
+          .
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <figure className="min-w-0 md:col-span-2">
-            <BeforeAfterStack
-              before="/work/tesla-before.jpg"
-              after="/work/tesla-after.jpg"
-              alt="Tesla curb rash repair Las Vegas"
-            />
-            <figcaption className="mt-3 text-sm text-faint">
-              Real job. Tesla, Las Vegas.{" "}
-              <Link to="/tesla-wheel-repair" className="hover:text-accent">
-                Tesla wheel repair
-              </Link>
-            </figcaption>
-          </figure>
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          {JOBS.map((job) => (
+            <figure key={job.after} className="min-w-0">
+              <BeforeAfterStack
+                before={job.before}
+                after={job.after}
+                alt={job.alt}
+              />
+              <figcaption className="mt-3 text-sm text-faint">
+                {job.caption}
+                {"to" in job ? (
+                  <>
+                    {" "}
+                    <Link to={job.to} className="hover:text-accent">
+                      {job.link}
+                    </Link>
+                  </>
+                ) : null}
+              </figcaption>
+            </figure>
+          ))}
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <figure>
@@ -296,6 +345,8 @@ function Gallery() {
               className="aspect-[4/3] w-full rounded-lg object-cover"
               width={800}
               height={600}
+              loading="lazy"
+              decoding="async"
             />
             <figcaption className="mt-3 text-sm text-faint">
               Sanded on the car, in the driveway.
@@ -308,6 +359,8 @@ function Gallery() {
               className="aspect-[4/3] w-full rounded-lg object-cover"
               width={800}
               height={600}
+              loading="lazy"
+              decoding="async"
             />
             <figcaption className="mt-3 text-sm text-faint">
               Color-matched on site.

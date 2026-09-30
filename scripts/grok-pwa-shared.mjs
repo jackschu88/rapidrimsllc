@@ -295,6 +295,7 @@ export function grokOgHeadTags({
   appName = DEFAULT_APP_NAME,
   site = {},
   documentTitle = "",
+  pagePath = "",
 } = {}) {
   const title = resolveOgTitle(site, appName, host, documentTitle);
   const publicHost = resolvePublicHost(host);
@@ -320,6 +321,12 @@ export function grokOgHeadTags({
     tags.push(`<meta property="og:image" content="${escapeHtml(image)}">`);
     tags.push(`<meta property="og:image:width" content="1200">`);
     tags.push(`<meta property="og:image:height" content="630">`);
+    const pathOnly = String(pagePath || "").split("?")[0];
+    if (pathOnly.startsWith("/")) {
+      const url =
+        pathOnly === "/" ? `https://${publicHost}` : `https://${publicHost}${pathOnly}`;
+      tags.push(`<meta property="og:url" content="${escapeHtml(url)}">`);
+    }
     const banner = String(site.banner ?? "").trim();
     if (banner) {
       const bannerUrl = `https://${publicHost}${banner.startsWith("/") ? banner : `/${banner}`}`;
@@ -329,6 +336,21 @@ export function grokOgHeadTags({
     }
   }
   return tags;
+}
+
+/** Keep one canonical. Route heads append a second link, and Google often trusts the first. */
+export function preferLastCanonical(html) {
+  const source = String(html);
+  const matches = [
+    ...source.matchAll(/<link\b[^>]*\brel=["']canonical["'][^>]*>/gi),
+  ];
+  if (matches.length <= 1) return source;
+  let index = 0;
+  const last = matches.length;
+  return source.replace(/<link\b[^>]*\brel=["']canonical["'][^>]*>/gi, (tag) => {
+    index += 1;
+    return index === last ? tag : "";
+  });
 }
 
 export function stripShareMetaTags(html) {
@@ -381,6 +403,7 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
+  const pagePath = String(ctx.pagePath ?? "");
   let next = stripShareMetaTags(html);
 
   const missing = grokPwaHeadTags(appName)
@@ -393,7 +416,7 @@ export function injectGrokPwaHead(html, ctx = {}) {
 
   next = insertAfterHeadOpen(
     next,
-    grokOgHeadTags({ host, appName, site, documentTitle }).join(""),
+    grokOgHeadTags({ host, appName, site, documentTitle, pagePath }).join(""),
   );
 
   if (!next.includes("/grok-app-builder/extensions.js")) {
@@ -417,8 +440,9 @@ export function injectGrokPwaHead(html, ctx = {}) {
     if (!next.includes('property="x:creator:id"')) missing.push(creatorTags[1]);
   }
 
-  if (missing.length === 0) return next;
-  return insertBeforeHeadClose(next, missing.join(""));
+  const withChrome =
+    missing.length === 0 ? next : insertBeforeHeadClose(next, missing.join(""));
+  return preferLastCanonical(withChrome);
 }
 
 function findHeadClose(buf) {
@@ -438,6 +462,7 @@ export function createHeadInjector(ctx = {}) {
   let pending = [];
   let done = false;
 
+  const pagePath = String(ctx.pagePath ?? "");
   const apply = (html) =>
     injectGrokPwaHead(html, {
       appName: normalized.appName,
@@ -447,6 +472,7 @@ export function createHeadInjector(ctx = {}) {
       host: normalized.host,
       cwd: normalized.cwd,
       site: normalized.site,
+      pagePath,
     });
 
   return {
