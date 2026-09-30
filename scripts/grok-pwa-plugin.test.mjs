@@ -412,6 +412,23 @@ test("nitro middleware and its bundled assets exist", () => {
   readFileSync(join(TEMPLATE_ROOT, "public/__grok/install/styles.css"));
 });
 
+test("keeps the last canonical and sets og:url from the request path", () => {
+  const html =
+    '<html><head><link rel="canonical" href="https://www.rapidrimslv.com"/>' +
+    "<title>Pricing</title>" +
+    '<link rel="canonical" href="https://www.rapidrimslv.com/pricing"/>' +
+    "</head><body></body></html>";
+  const out = injectGrokPwaHead(html, {
+    host: "www.rapidrimslv.com",
+    site: { title: "RapidRims", card: "custom" },
+    pagePath: "/pricing",
+  });
+  assert.equal(out.match(/rel="canonical"/g).length, 1);
+  assert.match(out, /href="https:\/\/www\.rapidrimslv\.com\/pricing"/);
+  assert.equal(out.includes('href="https://www.rapidrimslv.com"/>'), false);
+  assert.match(out, /property="og:url" content="https:\/\/www\.rapidrimslv\.com\/pricing"/);
+});
+
 test("vite plugin bakes og identity as a virtual module", () => {
   const plugin = readFileSync(join(TEMPLATE_ROOT, "scripts/grok-pwa-plugin.mjs"), "utf8");
   assert.match(plugin, /virtual:grok-og-identity/);
