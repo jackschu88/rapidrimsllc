@@ -10,7 +10,7 @@ export function MobileQuoteBar() {
           className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-accent text-sm font-medium text-accent-fg"
         >
           <Phone className="size-4" />
-          Call
+          {SITE.phonePretty}
         </a>
         <a
           href={smsHref()}
@@ -20,7 +20,6 @@ export function MobileQuoteBar() {
           Text photos
         </a>
       </div>
-      <span className="sr-only">Call or text {SITE.phonePretty}</span>
     </div>
   );
 }

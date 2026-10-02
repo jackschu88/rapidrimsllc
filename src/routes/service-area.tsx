@@ -1,30 +1,32 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FaqList } from "@/components/site/faq-list";
 import { PublicPage } from "@/components/site/public-page";
-import { QuoteCta } from "@/components/site/quote-cta";
+import { PhoneLine, QuoteCta } from "@/components/site/quote-cta";
 import { ServiceCities } from "@/components/site/service-cities";
 import {
   AREA_DETAILS,
+  AREA_HEAD,
   SERVICE_AREA_FAQS,
   faqJsonLd,
   jsonLd,
   pageHead,
+  webPageJsonLd,
 } from "@/lib/site";
 
 export const Route = createFileRoute("/service-area")({
   component: ServiceArea,
   head: () =>
-    pageHead(
-      "Rim repair in Las Vegas, Henderson & Summerlin | RapidRims",
-      "Mobile on-car curb rash repair in Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise. One tech. We come to you. Call or text (612) 219-5065.",
-      "/service-area",
-    ),
+    pageHead(AREA_HEAD.title, AREA_HEAD.description, AREA_HEAD.path, AREA_HEAD.image),
 });
 
 function ServiceArea() {
   return (
     <PublicPage
-      jsonLd={[jsonLd, faqJsonLd(SERVICE_AREA_FAQS)]}
+      jsonLd={[
+        jsonLd,
+        webPageJsonLd(AREA_HEAD.title, AREA_HEAD.description, AREA_HEAD.path),
+        faqJsonLd(SERVICE_AREA_FAQS),
+      ]}
       crumb={{ label: "Service area", path: "/service-area" }}
     >
       <section className="border-b border-border">
@@ -33,13 +35,14 @@ function ServiceArea() {
             Service area
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            Mobile rim repair across the valley.
+            Rim repair in the Las Vegas Valley.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             On-car curb rash repair in Las Vegas, Henderson, North Las Vegas,
             Summerlin, Spring Valley, and Enterprise. Driveway, work lot, or
             apartment. Evenings and weekends. One number.
           </p>
+          <PhoneLine />
         </div>
       </section>
 

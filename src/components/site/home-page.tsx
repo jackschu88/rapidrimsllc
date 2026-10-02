@@ -21,6 +21,7 @@ import {
   jsonLd,
   smsHref,
   telHref,
+  webPageJsonLd,
 } from "@/lib/site";
 
 const JOBS = [
@@ -80,6 +81,7 @@ export function HomePage() {
   return (
     <div id="top" className="min-h-dvh bg-bg text-fg">
       <JsonLd data={jsonLd} />
+      <JsonLd data={webPageJsonLd(SITE.title, SITE.description, "/")} />
       <JsonLd data={faqJsonLd(FAQ)} />
       <SiteHeader />
       <main>
@@ -108,13 +110,14 @@ function Hero() {
             Las Vegas mobile rim repair
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl lg:text-[4.4rem]">
-            Curb rash repair in your driveway.
+            Curb rash repair in Las Vegas.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted sm:text-lg">
-            Mobile on-car rim repair in Las Vegas, Henderson, and Summerlin.
-            For most repairs the wheel stays on the car — no shop drop-off,
-            often about 20 minutes a rim. A typical set of four is about an
-            hour. Want factory-perfect? We also do booth-quality refinishing.
+            In your driveway. Mobile on-car rim repair. For most jobs the wheel
+            stays on the car — no shop drop-off, often about 20 minutes a rim.
+            A typical set of four is about an hour. Henderson, North Las Vegas,
+            Summerlin, Spring Valley, and Enterprise. Want factory-perfect? We
+            also do booth-quality refinishing.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="primary" size="xl" className="sm:min-w-56">
@@ -380,17 +383,14 @@ function Area() {
           Service area
         </p>
         <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          Las Vegas, Henderson, Summerlin.
+          The Las Vegas Valley.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Mobile curb rash and rim scuff repair across the southwest valley.
-          Evenings and weekends. Text anytime — I answer fast.
+          Mobile curb rash repair in Las Vegas, Henderson, North Las Vegas,
+          Summerlin, Spring Valley, and Enterprise. Evenings and weekends. One
+          number. If you’re close and not named here, ask.
         </p>
         <ServiceCities />
-        <p className="mt-6 text-sm text-faint">
-          Also Spring Valley, Enterprise, and North Las Vegas. If you’re close,
-          ask.
-        </p>
       </div>
     </section>
   );

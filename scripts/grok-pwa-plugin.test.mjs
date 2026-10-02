@@ -429,6 +429,29 @@ test("keeps the last canonical and sets og:url from the request path", () => {
   assert.match(out, /property="og:url" content="https:\/\/www\.rapidrimslv\.com\/pricing"/);
 });
 
+test("page title and description win the share card", () => {
+  const html =
+    '<html><head><title>What curb rash repair costs in Las Vegas | RapidRims</title>' +
+    '<meta name="description" content="Light lip rash is $100 a rim.">' +
+    "</head><body></body></html>";
+  const out = injectGrokPwaHead(html, {
+    host: "www.rapidrimslv.com",
+    site: {
+      title: "RapidRims",
+      description: "Home blurb",
+      siteName: "RapidRims LLC",
+      card: "custom",
+    },
+    pagePath: "/pricing",
+  });
+  assert.match(out, /property="og:title" content="What curb rash repair costs in Las Vegas \| RapidRims"/);
+  assert.match(out, /name="twitter:title" content="What curb rash repair costs in Las Vegas \| RapidRims"/);
+  assert.match(out, /property="og:description" content="Light lip rash is \$100 a rim\."/);
+  assert.match(out, /property="og:site_name" content="RapidRims LLC"/);
+  assert.doesNotMatch(out, /Home blurb/);
+  assert.equal(out.split('property="og:title"').length - 1, 1);
+});
+
 test("vite plugin bakes og identity as a virtual module", () => {
   const plugin = readFileSync(join(TEMPLATE_ROOT, "scripts/grok-pwa-plugin.mjs"), "utf8");
   assert.match(plugin, /virtual:grok-og-identity/);

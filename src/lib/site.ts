@@ -14,9 +14,49 @@ export const SITE = {
   city: "Las Vegas",
   region: "NV",
   country: "US",
-  title: "Curb Rash Repair Las Vegas | RapidRims",
+  title: "Curb rash repair in Las Vegas | RapidRims",
   description:
-    "Mobile on-car curb rash repair in Las Vegas, Henderson & Summerlin. Wheel stays on, or booth-quality refinishing. From $100 a rim. Call or text (612) 219-5065.",
+    "Curb rash repair in Las Vegas. Mobile, on the car, in your driveway. Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise. From $100 a rim. Call or text (612) 219-5065.",
+} as const;
+
+export const CURB_HEAD = {
+  title: "On-car curb rash repair in Las Vegas | RapidRims",
+  description:
+    "On-car curb rash repair in Las Vegas. The wheel stays on. Grind, sand, polish or paint in the driveway. Text photos for a quote. Call or text (612) 219-5065.",
+  path: "/curb-rash-repair",
+  image: "/work/black-after.jpg",
+} as const;
+
+export const MOBILE_HEAD = {
+  title: "Mobile rim repair in Las Vegas | RapidRims",
+  description:
+    "Mobile rim repair in Las Vegas. One tech comes to the driveway, work lot, or apartment. The wheel stays on. Text photos. Call or text (612) 219-5065.",
+  path: "/mobile-rim-repair-las-vegas",
+  image: "/og.jpg",
+} as const;
+
+export const PRICING_HEAD = {
+  title: "What curb rash repair costs in Las Vegas | RapidRims",
+  description:
+    "What curb rash repair costs in Las Vegas. Light lip rash is $100 a rim. Heavier on-car work is $125–$150. Two or more on the same visit are $90–$100 each. Call or text (612) 219-5065.",
+  path: "/pricing",
+  image: "/og.jpg",
+} as const;
+
+export const AREA_HEAD = {
+  title: "Rim repair in the Las Vegas Valley | RapidRims",
+  description:
+    "Rim repair in the Las Vegas Valley. Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise. One tech. We come to you. Call or text (612) 219-5065.",
+  path: "/service-area",
+  image: "/og.jpg",
+} as const;
+
+export const TESLA_HEAD = {
+  title: "Tesla wheel repair in Las Vegas | RapidRims",
+  description:
+    "Tesla wheel repair in Las Vegas. On-car curb rash. Real job photos. The wheel stays on. Text photos for a quote. Call or text (612) 219-5065.",
+  path: "/tesla-wheel-repair",
+  image: "/work/tesla-after.jpg",
 } as const;
 
 export function telHref() {
@@ -36,13 +76,40 @@ export function canonicalUrl(path: string) {
   return `${SITE.canonicalOrigin}${path}`;
 }
 
-export function pageHead(title: string, description: string, path: string) {
+export function pageHead(
+  title: string,
+  description: string,
+  path: string,
+  image = "/og.jpg",
+) {
+  const url = canonicalUrl(path);
+  const imageUrl = `${SITE.website}${image}`;
   return {
     meta: [
       { title },
       { name: "description" as const, content: description },
+      { property: "og:title" as const, content: title },
+      { property: "og:description" as const, content: description },
+      { property: "og:url" as const, content: url },
+      { property: "og:image" as const, content: imageUrl },
+      { name: "twitter:title" as const, content: title },
+      { name: "twitter:description" as const, content: description },
+      { name: "twitter:image" as const, content: imageUrl },
     ],
-    links: [{ rel: "canonical" as const, href: canonicalUrl(path) }],
+    links: [{ rel: "canonical" as const, href: url }],
+  };
+}
+
+export function webPageJsonLd(name: string, description: string, path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    description,
+    url: canonicalUrl(path),
+    isPartOf: { "@id": `${SITE.website}#website` },
+    about: { "@id": `${SITE.website}#business` },
+    inLanguage: "en-US",
   };
 }
 
@@ -254,6 +321,29 @@ export const SERVICE_AREA_FAQS: FaqItem[] = [
     q: "Is there a different number for each city?",
     a: "No. One tech, one number: (612) 219-5065. Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise.",
   },
+  {
+    q: "Do you have a shop I can drive to?",
+    a: "No. RapidRims LLC is mobile. There is no street address. We come to the driveway, work lot, or apartment. Call or text (612) 219-5065.",
+  },
+];
+
+export const TESLA_FAQS: FaqItem[] = [
+  {
+    q: "Does the Tesla wheel come off?",
+    a: "No. This is on-car curb rash repair. The wheel stays on the car. We grind, sand, polish or paint the lip in the driveway.",
+  },
+  {
+    q: "Is Tesla curb rash the same price?",
+    a: "Yes. Same prices as the pricing page. Light lip rash is $100 a rim. Heavier on-car work is $125–$150 a rim. Two or more on the same visit are $90–$100 each. The real number is from photos.",
+  },
+  {
+    q: "What if the Tesla wheel is bent or cracked?",
+    a: "Send a photo. A bend, a crack, or a leak is not an on-car cosmetic job. Structural damage may need a shop or a replacement.",
+  },
+  {
+    q: "How do I get a Tesla wheel quote?",
+    a: "Text photos of the lip — close and from a step back — to (612) 219-5065. Same number for a call. Say you’re in the Las Vegas Valley.",
+  },
 ];
 
 export function breadcrumbJsonLd(label: string, path: string) {
@@ -311,7 +401,7 @@ export const jsonLd = {
       email: SITE.email,
       image: `${SITE.website}/work/tesla-after.jpg`,
       logo: `${SITE.website}/logo.jpg`,
-      priceRange: "$$",
+      priceRange: "$100–$150",
       currenciesAccepted: "USD",
       paymentAccepted: "Cash, Credit Card",
       openingHours: "Mo-Su 08:00-21:00",

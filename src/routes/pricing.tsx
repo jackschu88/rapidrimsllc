@@ -2,28 +2,35 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { FaqList } from "@/components/site/faq-list";
 import { PriceBands } from "@/components/site/price-bands";
 import { PublicPage } from "@/components/site/public-page";
-import { QuoteCta } from "@/components/site/quote-cta";
+import { PhoneLine, QuoteCta } from "@/components/site/quote-cta";
 import {
   PRICING_FAQS,
+  PRICING_HEAD,
   faqJsonLd,
   jsonLd,
   pageHead,
+  webPageJsonLd,
 } from "@/lib/site";
 
 export const Route = createFileRoute("/pricing")({
   component: PricingPage,
   head: () =>
     pageHead(
-      "Curb rash repair pricing — Las Vegas | RapidRims",
-      "Light 1–2 lip spots $100/rim. Heavier on-car $125–$150/rim. Two or more same visit $90–$100 each. Veteran 10% with ID. Quote from photos. Call or text (612) 219-5065.",
-      "/pricing",
+      PRICING_HEAD.title,
+      PRICING_HEAD.description,
+      PRICING_HEAD.path,
+      PRICING_HEAD.image,
     ),
 });
 
 function PricingPage() {
   return (
     <PublicPage
-      jsonLd={[jsonLd, faqJsonLd(PRICING_FAQS)]}
+      jsonLd={[
+        jsonLd,
+        webPageJsonLd(PRICING_HEAD.title, PRICING_HEAD.description, PRICING_HEAD.path),
+        faqJsonLd(PRICING_FAQS),
+      ]}
       crumb={{ label: "Pricing", path: "/pricing" }}
     >
       <section className="border-b border-border">
@@ -32,7 +39,7 @@ function PricingPage() {
             Pricing
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            Clear numbers.
+            What curb rash repair costs in Las Vegas.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Quote is from photos. These are the typical on-car prices in Las
@@ -50,6 +57,7 @@ function PricingPage() {
             </Link>
             .
           </p>
+          <PhoneLine />
         </div>
       </section>
 

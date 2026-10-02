@@ -48,8 +48,7 @@ export function SiteHeader() {
           <Button asChild variant="primary" size="sm" className="sm:h-11 sm:px-4">
             <a href={telHref()} aria-label={`Call ${SITE.phonePretty}`}>
               <Phone className="size-4" />
-              <span className="sm:hidden">Call</span>
-              <span className="hidden sm:inline">{SITE.phonePretty}</span>
+              <span className="whitespace-nowrap">{SITE.phonePretty}</span>
             </a>
           </Button>
         </div>

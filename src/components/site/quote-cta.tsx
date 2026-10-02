@@ -2,6 +2,18 @@ import { MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE, smsHref, telHref } from "@/lib/site";
 
+export function PhoneLine() {
+  return (
+    <p className="mt-4 text-base text-fg">
+      Call or text{" "}
+      <a href={telHref()} className="font-medium hover:text-accent">
+        {SITE.phonePretty}
+      </a>
+      .
+    </p>
+  );
+}
+
 type QuoteCtaProps = {
   heading?: string;
   body?: string;

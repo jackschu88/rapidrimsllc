@@ -1,23 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BeforeAfterStack } from "@/components/site/before-after";
+import { FaqList } from "@/components/site/faq-list";
 import { PublicPage } from "@/components/site/public-page";
-import { QuoteCta } from "@/components/site/quote-cta";
-import { jsonLd, pageHead } from "@/lib/site";
+import { PhoneLine, QuoteCta } from "@/components/site/quote-cta";
+import { TESLA_FAQS, TESLA_HEAD, faqJsonLd, jsonLd, pageHead, webPageJsonLd } from "@/lib/site";
 
 export const Route = createFileRoute("/tesla-wheel-repair")({
   component: TeslaWheelRepair,
   head: () =>
-    pageHead(
-      "Tesla wheel repair Las Vegas — on-car curb rash | RapidRims",
-      "On-car Tesla curb rash repair in Las Vegas. Real job photos. Wheel stays on. Text photos for a quote. Call or text (612) 219-5065.",
-      "/tesla-wheel-repair",
-    ),
+    pageHead(TESLA_HEAD.title, TESLA_HEAD.description, TESLA_HEAD.path, TESLA_HEAD.image),
 });
 
 function TeslaWheelRepair() {
   return (
     <PublicPage
-      jsonLd={jsonLd}
+      jsonLd={[
+        jsonLd,
+        webPageJsonLd(TESLA_HEAD.title, TESLA_HEAD.description, TESLA_HEAD.path),
+        faqJsonLd(TESLA_FAQS),
+      ]}
       crumb={{ label: "Tesla wheel repair", path: "/tesla-wheel-repair" }}
     >
       <section className="border-b border-border">
@@ -26,7 +27,7 @@ function TeslaWheelRepair() {
             Tesla
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            Tesla curb rash, on the car.
+            Tesla wheel repair in Las Vegas.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Same mobile lip repair as every other job. Painted Tesla wheels,
@@ -38,6 +39,7 @@ function TeslaWheelRepair() {
             </Link>
             . The number still comes from your photos.
           </p>
+          <PhoneLine />
         </div>
       </section>
 
@@ -78,6 +80,18 @@ function TeslaWheelRepair() {
               <figcaption className="mt-3 text-sm text-faint">After</figcaption>
             </figure>
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <p className="text-xs font-medium tracking-[0.18em] text-muted uppercase">
+            FAQ
+          </p>
+          <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+            Tesla wheels.
+          </h2>
+          <FaqList items={TESLA_FAQS} />
         </div>
       </section>
 

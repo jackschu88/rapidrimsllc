@@ -3,28 +3,30 @@ import { BeforeAfterStack } from "@/components/site/before-after";
 import { FaqList } from "@/components/site/faq-list";
 import { PhotoGuide } from "@/components/site/photo-guide";
 import { PublicPage } from "@/components/site/public-page";
-import { QuoteCta } from "@/components/site/quote-cta";
+import { PhoneLine, QuoteCta } from "@/components/site/quote-cta";
 import {
+  CURB_HEAD,
   CURB_RASH_FAQS,
   faqJsonLd,
   jsonLd,
   pageHead,
+  webPageJsonLd,
 } from "@/lib/site";
 
 export const Route = createFileRoute("/curb-rash-repair")({
   component: CurbRashRepair,
   head: () =>
-    pageHead(
-      "Curb rash repair in Las Vegas — on-car, wheel stays on | RapidRims",
-      "Cosmetic lip repair in your driveway. The wheel stays on. Text photos for a quote. Veteran-owned. Las Vegas Valley. Call or text (612) 219-5065.",
-      "/curb-rash-repair",
-    ),
+    pageHead(CURB_HEAD.title, CURB_HEAD.description, CURB_HEAD.path, CURB_HEAD.image),
 });
 
 function CurbRashRepair() {
   return (
     <PublicPage
-      jsonLd={[jsonLd, faqJsonLd(CURB_RASH_FAQS)]}
+      jsonLd={[
+        jsonLd,
+        webPageJsonLd(CURB_HEAD.title, CURB_HEAD.description, CURB_HEAD.path),
+        faqJsonLd(CURB_RASH_FAQS),
+      ]}
       crumb={{ label: "Curb rash repair", path: "/curb-rash-repair" }}
     >
       <section className="border-b border-border">
@@ -33,12 +35,13 @@ function CurbRashRepair() {
             Curb rash
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            On-car curb rash repair.
+            On-car curb rash repair in Las Vegas.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Scuffs and gouges on the lip from a curb. We repair that in the
             driveway. The wheel stays on the car. One tech. Photo quote.
           </p>
+          <PhoneLine />
         </div>
       </section>
 

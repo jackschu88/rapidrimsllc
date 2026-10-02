@@ -30,6 +30,7 @@ export type OgSite = {
   image?: string;
   banner?: string;
   color?: string;
+  siteName?: string;
 };
 
 export type GrokHeadContext = {
@@ -48,6 +49,7 @@ export declare function snapshotOgIdentity(cwd?: string): { site: OgSite };
 export declare function customOgAssetPath(cwd?: string): string;
 export declare function ogServiceUrl(): string;
 export declare function titleFromDocument(html: string): string;
+export declare function metaContent(html: string, key: string): string;
 export declare function resolveOgTitle(
   site?: OgSite,
   appName?: string,
@@ -60,6 +62,7 @@ export declare function grokOgHeadTags(ctx?: {
   appName?: string;
   site?: OgSite;
   documentTitle?: string;
+  pageDescription?: string;
   pagePath?: string;
 }): string[];
 export declare function stripShareMetaTags(html: string): string;
