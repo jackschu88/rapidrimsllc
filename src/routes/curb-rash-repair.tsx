@@ -10,6 +10,7 @@ import {
   jsonLd,
   pageHead,
 } from "@/lib/site";
+import { GLOSS_BLACK_HONDA_JOB } from "@/lib/work";
 
 export const Route = createFileRoute("/curb-rash-repair")({
   component: CurbRashRepair,
@@ -84,12 +85,14 @@ function CurbRashRepair() {
           </div>
           <div className="mt-10 max-w-3xl">
             <BeforeAfterStack
-              before="/work/black-before.jpg"
-              after="/work/black-after.jpg"
-              alt="Black alloy curb rash repair in Las Vegas"
+              before={GLOSS_BLACK_HONDA_JOB.before}
+              after={GLOSS_BLACK_HONDA_JOB.after}
+              beforeAlt={GLOSS_BLACK_HONDA_JOB.beforeAlt}
+              afterAlt={GLOSS_BLACK_HONDA_JOB.afterAlt}
             />
             <p className="mt-3 text-sm text-faint">
-              Black alloy, Las Vegas. Wheel stayed on the car.
+              Gloss black Honda wheel, Las Vegas. Rash around the lip, before
+              and after.
             </p>
           </div>
         </div>

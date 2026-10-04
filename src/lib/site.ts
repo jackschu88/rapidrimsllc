@@ -121,6 +121,7 @@ export const NAV = [
   { to: "/mobile-rim-repair-las-vegas", label: "Mobile" },
   { to: "/service-area", label: "Service area" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/work", label: "Work" },
 ] as const;
 
 export const FAQ = [

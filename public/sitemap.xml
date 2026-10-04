@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.rapidrimslv.com/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -10,26 +10,26 @@
       <image:title>Tesla wheel after on-car curb rash repair in Las Vegas</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.rapidrimslv.com/work/black-after.jpg</image:loc>
-      <image:title>Black alloy wheel after curb rash repair in Las Vegas</image:title>
+      <image:loc>https://www.rapidrimslv.com/work/gloss-black-honda-wheel-curb-rash-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Gloss black Honda wheel after curb rash repair, Las Vegas</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.rapidrimslv.com/work/silver-after.jpg</image:loc>
-      <image:title>Silver alloy wheel after scuff repair in Las Vegas</image:title>
+      <image:loc>https://www.rapidrimslv.com/work/silver-tesla-wheel-curb-rash-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Silver Tesla wheel after curb rash repair, Las Vegas</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.rapidrimslv.com/curb-rash-repair</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.rapidrimslv.com/work/black-before.jpg</image:loc>
-      <image:title>Black alloy wheel with curb rash before repair</image:title>
+      <image:loc>https://www.rapidrimslv.com/work/gloss-black-honda-wheel-curb-rash-repair-before-las-vegas.jpg</image:loc>
+      <image:title>Gloss black Honda wheel with curb rash before repair, Las Vegas</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.rapidrimslv.com/work/black-after.jpg</image:loc>
-      <image:title>Black alloy wheel after on-car curb rash repair</image:title>
+      <image:loc>https://www.rapidrimslv.com/work/gloss-black-honda-wheel-curb-rash-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Gloss black Honda wheel after curb rash repair, Las Vegas</image:title>
     </image:image>
   </url>
   <url>
@@ -49,6 +49,60 @@
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rapidrimslv.com/work</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/tesla-before.jpg</image:loc>
+      <image:title>Tesla wheel with curb rash before mobile repair</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/tesla-after.jpg</image:loc>
+      <image:title>Tesla wheel after on-car curb rash repair in Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/gloss-black-honda-wheel-curb-rash-repair-before-las-vegas.jpg</image:loc>
+      <image:title>Gloss black Honda wheel with curb rash before repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/gloss-black-honda-wheel-curb-rash-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Gloss black Honda wheel after curb rash repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/silver-tesla-wheel-curb-rash-repair-before-las-vegas.jpg</image:loc>
+      <image:title>Silver Tesla wheel with curb rash before repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/silver-tesla-wheel-curb-rash-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Silver Tesla wheel after curb rash repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/two-tone-honda-wheel-curb-rash-repair-before-las-vegas.jpg</image:loc>
+      <image:title>Two-tone Honda wheel with curb rash on the lip before repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/two-tone-honda-wheel-curb-rash-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Two-tone Honda wheel after curb rash repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/black-honda-wheel-rim-scuff-repair-before-las-vegas.jpg</image:loc>
+      <image:title>Black Honda wheel with a scuffed lip before rim repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/black-honda-wheel-rim-scuff-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Black Honda wheel after rim scuff repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/machined-wheel-gouge-repair-before-las-vegas.jpg</image:loc>
+      <image:title>Two-tone machined wheel with a deep gouge, off the car, before repair, Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rapidrimslv.com/work/machined-wheel-gouge-repair-after-las-vegas.jpg</image:loc>
+      <image:title>Two-tone machined wheel after gouge repair, off the car, Las Vegas</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.rapidrimslv.com/tesla-wheel-repair</loc>
