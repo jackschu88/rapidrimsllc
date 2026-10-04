@@ -55,7 +55,7 @@ function TeslaWheelRepair() {
               <BeforeAfterStack
                 before="/work/tesla-before.jpg"
                 after="/work/tesla-after.jpg"
-                alt="Tesla curb rash repair Las Vegas"
+                alt="Tesla wheel with curb rash repaired on the car"
               />
               <figcaption className="mt-3 text-sm text-faint">
                 Tesla, Las Vegas. On-car.
@@ -64,7 +64,7 @@ function TeslaWheelRepair() {
             <figure>
               <img
                 src="/work/tesla-before-full.jpg"
-                alt="Tesla wheel before curb rash repair, Las Vegas"
+                alt="Tesla wheel before curb rash repair"
                 className="aspect-[4/3] w-full rounded-lg object-cover"
               />
               <figcaption className="mt-3 text-sm text-faint">Before</figcaption>
@@ -72,7 +72,7 @@ function TeslaWheelRepair() {
             <figure>
               <img
                 src="/work/tesla-after-full.jpg"
-                alt="Tesla wheel after curb rash repair, Las Vegas"
+                alt="Tesla wheel after curb rash repair"
                 className="aspect-[4/3] w-full rounded-lg object-cover"
               />
               <figcaption className="mt-3 text-sm text-faint">After</figcaption>

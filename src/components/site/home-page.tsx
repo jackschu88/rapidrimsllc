@@ -105,7 +105,7 @@ function Hero() {
           <figure className="relative overflow-hidden rounded-xl bg-surface-2">
             <img
               src="/work/tesla-after.jpg"
-              alt="Tesla wheel after mobile curb rash repair in Las Vegas"
+              alt="Tesla wheel after mobile curb rash repair"
               className="aspect-square w-full object-cover"
               fetchPriority="high"
               width={800}
