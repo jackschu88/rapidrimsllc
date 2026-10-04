@@ -14,7 +14,7 @@ export const Route = createFileRoute("/pricing")({
   component: PricingPage,
   head: () =>
     pageHead(
-      "Curb rash repair pricing — Las Vegas | RapidRims",
+      "Curb Rash Repair Cost Las Vegas: From $100 a Rim | RapidRims",
       "Light 1–2 lip spots $100/rim. Heavier on-car $125–$150/rim. Two or more same visit $90–$100 each. Veteran 10% with ID. Quote from photos. Call or text (612) 219-5065.",
       "/pricing",
     ),
@@ -32,7 +32,7 @@ function PricingPage() {
             Pricing
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            Clear numbers.
+            Curb rash repair cost in Las Vegas.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Quote is from photos. These are the typical on-car prices in Las

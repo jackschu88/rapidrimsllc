@@ -10,12 +10,13 @@ import {
   jsonLd,
   pageHead,
 } from "@/lib/site";
+import { BLACK_ALLOY_HONDA_JOB } from "@/lib/work";
 
 export const Route = createFileRoute("/curb-rash-repair")({
   component: CurbRashRepair,
   head: () =>
     pageHead(
-      "Curb rash repair in Las Vegas — on-car, wheel stays on | RapidRims",
+      "On-Car Rim Curb Rash & Scuff Repair | Las Vegas | RapidRims",
       "Cosmetic lip repair in your driveway. The wheel stays on. Text photos for a quote. Veteran-owned. Las Vegas Valley. Call or text (612) 219-5065.",
       "/curb-rash-repair",
     ),
@@ -84,12 +85,13 @@ function CurbRashRepair() {
           </div>
           <div className="mt-10 max-w-3xl">
             <BeforeAfterStack
-              before="/work/black-before.jpg"
-              after="/work/black-after.jpg"
-              alt="Black alloy curb rash repair in Las Vegas"
+              before={BLACK_ALLOY_HONDA_JOB.before}
+              after={BLACK_ALLOY_HONDA_JOB.after}
+              beforeAlt={BLACK_ALLOY_HONDA_JOB.beforeAlt}
+              afterAlt={BLACK_ALLOY_HONDA_JOB.afterAlt}
             />
             <p className="mt-3 text-sm text-faint">
-              Black alloy, Las Vegas. Wheel stayed on the car.
+              {BLACK_ALLOY_HONDA_JOB.caption}
             </p>
           </div>
         </div>

@@ -14,7 +14,7 @@ export const SITE = {
   city: "Las Vegas",
   region: "NV",
   country: "US",
-  title: "Curb Rash Repair Las Vegas | RapidRims",
+  title: "Curb Rash Repair Las Vegas | Mobile Rim Repair | RapidRims",
   description:
     "Mobile on-car curb rash repair in Las Vegas, Henderson & Summerlin. Wheel stays on, or booth-quality refinishing. From $100 a rim. Call or text (612) 219-5065.",
 } as const;
@@ -121,6 +121,7 @@ export const NAV = [
   { to: "/mobile-rim-repair-las-vegas", label: "Mobile" },
   { to: "/service-area", label: "Service area" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/work", label: "Work" },
 ] as const;
 
 export const FAQ = [
@@ -314,7 +315,6 @@ export const jsonLd = {
       priceRange: "$$",
       currenciesAccepted: "USD",
       paymentAccepted: "Cash, Credit Card",
-      openingHours: "Mo-Su 08:00-21:00",
       address: {
         "@type": "PostalAddress",
         addressLocality: SITE.city,

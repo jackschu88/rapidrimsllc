@@ -4,6 +4,10 @@ type PairProps = {
   before: string;
   after: string;
   alt?: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+  /** Tailwind object-position class, e.g. "object-top". */
+  position?: string;
   className?: string;
 };
 
@@ -11,6 +15,9 @@ export function BeforeAfterStack({
   before,
   after,
   alt = "curb rash repair Las Vegas",
+  beforeAlt,
+  afterAlt,
+  position,
   className,
 }: PairProps) {
   return (
@@ -18,8 +25,8 @@ export function BeforeAfterStack({
       <figure className="relative overflow-hidden rounded-lg bg-surface-2">
         <img
           src={before}
-          alt={`${alt}, before`}
-          className="aspect-[4/3] h-full w-full object-cover"
+          alt={beforeAlt ?? `${alt}, before`}
+          className={cn("aspect-[4/3] h-full w-full object-cover", position)}
           loading="lazy"
           decoding="async"
         />
@@ -30,8 +37,8 @@ export function BeforeAfterStack({
       <figure className="relative overflow-hidden rounded-lg bg-surface-2">
         <img
           src={after}
-          alt={`${alt}, after`}
-          className="aspect-[4/3] h-full w-full object-cover"
+          alt={afterAlt ?? `${alt}, after`}
+          className={cn("aspect-[4/3] h-full w-full object-cover", position)}
           loading="lazy"
           decoding="async"
         />
