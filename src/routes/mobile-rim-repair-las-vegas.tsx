@@ -15,7 +15,7 @@ export const Route = createFileRoute("/mobile-rim-repair-las-vegas")({
   component: MobileRimRepair,
   head: () =>
     pageHead(
-      "Mobile rim repair Las Vegas — we come to you | RapidRims",
+      "Mobile Rim & Wheel Repair Las Vegas | We Come to You | RapidRims",
       "One-tech mobile curb rash repair in the Las Vegas Valley. Driveway, work lot, or apartment. Wheel stays on. Text photos. Call or text (612) 219-5065.",
       "/mobile-rim-repair-las-vegas",
     ),
@@ -33,7 +33,7 @@ function MobileRimRepair() {
             Mobile
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            We come to you.
+            Mobile rim repair in Las Vegas. We come to you.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             One tech. Mobile only. On-car cosmetic lip repair in your driveway,

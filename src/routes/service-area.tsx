@@ -15,7 +15,7 @@ export const Route = createFileRoute("/service-area")({
   component: ServiceArea,
   head: () =>
     pageHead(
-      "Rim repair in Las Vegas, Henderson & Summerlin | RapidRims",
+      "Rim Repair Henderson, North Las Vegas & Summerlin | RapidRims",
       "Mobile on-car curb rash repair in Las Vegas, Henderson, North Las Vegas, Summerlin, Spring Valley, and Enterprise. One tech. We come to you. Call or text (612) 219-5065.",
       "/service-area",
     ),
@@ -33,7 +33,8 @@ function ServiceArea() {
             Service area
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            Mobile rim repair across the valley.
+            Mobile rim repair in Las Vegas, Henderson, Summerlin &amp; North Las
+            Vegas.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             On-car curb rash repair in Las Vegas, Henderson, North Las Vegas,

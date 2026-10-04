@@ -22,7 +22,7 @@ import {
   smsHref,
   telHref,
 } from "@/lib/site";
-import { HOME_JOBS } from "@/lib/work";
+import { WORK_JOBS } from "@/lib/work";
 
 
 const steps = [
@@ -75,7 +75,7 @@ function Hero() {
             Las Vegas mobile rim repair
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl lg:text-[4.4rem]">
-            Curb rash repair in your driveway.
+            Mobile curb rash repair in Las Vegas, in your driveway.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted sm:text-lg">
             Mobile on-car rim repair in Las Vegas, Henderson, and Summerlin.
@@ -283,7 +283,7 @@ function Gallery() {
           .
         </p>
         <div className="mt-10 grid gap-8 md:grid-cols-2">
-          {HOME_JOBS.map((job) => (
+          {WORK_JOBS.map((job) => (
             <figure key={job.after} className="min-w-0">
               <BeforeAfterStack
                 before={job.before}

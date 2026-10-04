@@ -5,7 +5,7 @@ import { QuoteCta } from "@/components/site/quote-cta";
 import { SITE, jsonLd, pageHead } from "@/lib/site";
 import { WORK_JOBS } from "@/lib/work";
 
-const TITLE = "Curb rash repair before and after photos, Las Vegas | RapidRims";
+const TITLE = "Curb Rash Repair Before and After | Las Vegas | RapidRims";
 const DESCRIPTION =
   "Real RapidRims jobs in Las Vegas: curb rash and rim scuff repair, before and after. Text photos of your wheel for a quote. Call or text (612) 219-5065.";
 
@@ -45,7 +45,7 @@ function Work() {
             Work
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            Curb rash before and after.
+            Curb rash repair before and after.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Real RapidRims jobs in Las Vegas. Before on the left, after on the

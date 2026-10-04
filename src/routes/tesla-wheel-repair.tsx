@@ -8,7 +8,7 @@ export const Route = createFileRoute("/tesla-wheel-repair")({
   component: TeslaWheelRepair,
   head: () =>
     pageHead(
-      "Tesla wheel repair Las Vegas — on-car curb rash | RapidRims",
+      "Tesla Wheel & Curb Rash Repair Las Vegas | RapidRims",
       "On-car Tesla curb rash repair in Las Vegas. Real job photos. Wheel stays on. Text photos for a quote. Call or text (612) 219-5065.",
       "/tesla-wheel-repair",
     ),
@@ -26,7 +26,7 @@ function TeslaWheelRepair() {
             Tesla
           </p>
           <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-semibold tracking-tight text-fg sm:text-6xl">
-            Tesla curb rash, on the car.
+            Tesla wheel and curb rash repair in Las Vegas, on the car.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Same mobile lip repair as every other job. Painted Tesla wheels,
