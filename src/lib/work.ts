@@ -14,8 +14,8 @@ export type WorkJob = {
 export const TESLA_JOB: WorkJob = {
   before: "/work/tesla-before.jpg",
   after: "/work/tesla-after.jpg",
-  beforeAlt: "Tesla curb rash repair in a Las Vegas driveway, before",
-  afterAlt: "Tesla curb rash repair in a Las Vegas driveway, after",
+  beforeAlt: "Tesla curb rash repair in a customer's driveway, before",
+  afterAlt: "Tesla curb rash repair in a customer's driveway, after",
   caption: "Tesla, Las Vegas. Wheel stayed on.",
   to: "/tesla-wheel-repair",
   link: "Tesla wheel repair",
