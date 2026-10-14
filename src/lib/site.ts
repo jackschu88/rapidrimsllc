@@ -312,7 +312,7 @@ export const jsonLd = {
       email: SITE.email,
       image: `${SITE.website}/work/tesla-after.jpg`,
       logo: `${SITE.website}/logo.jpg`,
-      priceRange: "$$",
+      priceRange: "From $100 per rim",
       currenciesAccepted: "USD",
       paymentAccepted: "Cash, Credit Card",
       address: {
@@ -322,15 +322,6 @@ export const jsonLd = {
         addressCountry: SITE.country,
       },
       areaServed,
-      serviceArea: {
-        "@type": "GeoCircle",
-        geoMidpoint: {
-          "@type": "GeoCoordinates",
-          latitude: 36.1716,
-          longitude: -115.1391,
-        },
-        geoRadius: 40000,
-      },
       sameAs: [SITE.instagramUrl],
       knowsAbout: [
         "curb rash repair",
