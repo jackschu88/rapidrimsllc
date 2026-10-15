@@ -55,6 +55,10 @@ export const Route = createRootRoute({
     <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
+        {/* Analytics: Vercel Web Analytics, Speed Insights, call/text click tracking (+GA4 when GA_ID is set in public/rr-analytics.js) */}
+        <script defer src="/_vercel/insights/script.js"></script>
+        <script defer src="/_vercel/speed-insights/script.js"></script>
+        <script defer src="/rr-analytics.js"></script>
       </head>
       <body className="bg-bg text-fg">
         <PreviewHostBridge />
