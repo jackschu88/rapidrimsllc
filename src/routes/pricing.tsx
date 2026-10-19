@@ -15,7 +15,7 @@ export const Route = createFileRoute("/pricing")({
   head: () =>
     pageHead(
       "Curb Rash Repair Cost Las Vegas: From $100 a Rim | RapidRims",
-      "Light 1–2 lip spots $100/rim. Heavier on-car $125–$150/rim. Two or more same visit $90–$100 each. Veteran 10% with ID. Quote from photos. Call or text (612) 219-5065.",
+      "Light 1–2 lip spots $100/rim. Heavier on-car $125–$150/rim. Two or more same visit $90–$100 each. Military / veteran 10% off with ID. Text (612) 219-5065.",
       "/pricing",
     ),
 });

@@ -225,12 +225,16 @@ export const MOBILE_FAQS: FaqItem[] = [
 
 export const PRICING_FAQS: FaqItem[] = [
   {
+    q: "How much does curb rash repair cost per wheel?",
+    a: "Typical on-car prices per wheel: $100 for light rash (1–2 spots on the lip), $125–$150 for heavier damage that needs grinding, sanding, polishing or paint, and $90–$100 each when we do two or more on the same visit. Military / veteran: 10% off with ID. The exact number comes from your photos.",
+  },
+  {
     q: "How much is curb rash repair?",
     a: "Light (1–2 lip spots) is $100 per rim. Heavier on-car (grind, sand, polish or paint) is $125–$150 per rim. Two or more on the same visit are $90–$100 each.",
   },
   {
-    q: "Is there a veteran discount?",
-    a: "Yes. 10% off with ID. That sits on top of the prices above — we don’t advertise $80 rims.",
+    q: "Is there a military or veteran discount?",
+    a: "Yes. Military / veteran: 10% off with ID. That sits on top of the prices above — we don’t advertise $80 rims.",
   },
   {
     q: "Is the website price the final price?",

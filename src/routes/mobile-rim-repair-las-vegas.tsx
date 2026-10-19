@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FaqList } from "@/components/site/faq-list";
+import { PriceBands } from "@/components/site/price-bands";
 import { PhotoGuide } from "@/components/site/photo-guide";
 import { PublicPage } from "@/components/site/public-page";
 import { QuoteCta } from "@/components/site/quote-cta";
@@ -15,8 +16,8 @@ export const Route = createFileRoute("/mobile-rim-repair-las-vegas")({
   component: MobileRimRepair,
   head: () =>
     pageHead(
-      "Mobile Rim & Wheel Repair Las Vegas | We Come to You | RapidRims",
-      "One-tech mobile curb rash repair in the Las Vegas Valley. Driveway, work lot, or apartment. Wheel stays on. Text photos. Call or text (612) 219-5065.",
+      "Mobile Rim Repair Las Vegas: On-Car, From $100 a Rim | RapidRims",
+      "On-car rim repair in your Las Vegas driveway. $100/rim, $125–$150 heavier, $90–$100 each for 2+. Military / veteran 10% off with ID. Text (612) 219-5065.",
       "/mobile-rim-repair-las-vegas",
     ),
 });
@@ -67,6 +68,18 @@ function MobileRimRepair() {
           <p className="mt-6 text-sm text-faint">
             Southwest valley and surrounding. If you’re close, ask.
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+            Mobile rim repair prices.
+          </h2>
+          <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-muted">
+            Typical on-car prices, in your driveway. Quote is from photos.
+          </p>
+          <PriceBands />
         </div>
       </section>
 
