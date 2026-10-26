@@ -7,6 +7,7 @@ import {
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SITE } from "@/lib/site";
+import { LightboxProvider } from "@/components/photos/lightbox";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -63,7 +64,9 @@ export const Route = createRootRoute({
       <body className="bg-bg text-fg">
         <PreviewHostBridge />
         <AuthProvider>
-          <Outlet />
+          <LightboxProvider>
+            <Outlet />
+          </LightboxProvider>
         </AuthProvider>
         <Scripts />
       </body>

@@ -1,3 +1,4 @@
+import { ZoomPhoto } from "@/components/photos/photo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BeforeAfterStack } from "@/components/site/before-after";
 import { PublicPage } from "@/components/site/public-page";
@@ -62,17 +63,19 @@ function TeslaWheelRepair() {
               </figcaption>
             </figure>
             <figure>
-              <img
+              <ZoomPhoto
                 src="/work/tesla-before-full.jpg"
                 alt="Tesla wheel before curb rash repair"
+                gallery={[{ src: "/work/tesla-before-full.jpg", alt: "Tesla wheel before curb rash repair" }, { src: "/work/tesla-after-full.jpg", alt: "Tesla wheel after curb rash repair" }]}
                 className="aspect-[4/3] w-full rounded-lg object-cover"
               />
               <figcaption className="mt-3 text-sm text-faint">Before</figcaption>
             </figure>
             <figure>
-              <img
+              <ZoomPhoto
                 src="/work/tesla-after-full.jpg"
                 alt="Tesla wheel after curb rash repair"
+                gallery={[{ src: "/work/tesla-before-full.jpg", alt: "Tesla wheel before curb rash repair" }, { src: "/work/tesla-after-full.jpg", alt: "Tesla wheel after curb rash repair" }]}
                 className="aspect-[4/3] w-full rounded-lg object-cover"
               />
               <figcaption className="mt-3 text-sm text-faint">After</figcaption>
