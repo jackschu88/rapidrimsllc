@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { ZoomPhoto } from "@/components/photos/photo";
 
 type PairProps = {
   before: string;
@@ -20,28 +21,20 @@ export function BeforeAfterStack({
   position,
   className,
 }: PairProps) {
+  const gallery = [
+    { src: before, alt: beforeAlt ?? `${alt}, before` },
+    { src: after, alt: afterAlt ?? `${alt}, after` },
+  ];
   return (
     <div className={cn("grid grid-cols-2 gap-2", className)}>
       <figure className="relative overflow-hidden rounded-lg bg-surface-2">
-        <img
-          src={before}
-          alt={beforeAlt ?? `${alt}, before`}
-          className={cn("aspect-[4/3] h-full w-full object-cover", position)}
-          loading="lazy"
-          decoding="async"
-        />
+        <ZoomPhoto src={before} alt={beforeAlt ?? `${alt}, before`} gallery={gallery} sizes="(min-width: 768px) 25vw, 50vw" className={cn("aspect-[4/3] h-full w-full object-cover", position)} />
         <figcaption className="absolute top-3 left-3 rounded-sm bg-bg/80 px-2 py-1 text-[11px] font-medium tracking-wider text-fg uppercase">
           Before
         </figcaption>
       </figure>
       <figure className="relative overflow-hidden rounded-lg bg-surface-2">
-        <img
-          src={after}
-          alt={afterAlt ?? `${alt}, after`}
-          className={cn("aspect-[4/3] h-full w-full object-cover", position)}
-          loading="lazy"
-          decoding="async"
-        />
+        <ZoomPhoto src={after} alt={afterAlt ?? `${alt}, after`} gallery={gallery} sizes="(min-width: 768px) 25vw, 50vw" className={cn("aspect-[4/3] h-full w-full object-cover", position)} />
         <figcaption className="absolute top-3 right-3 rounded-sm bg-bg/80 px-2 py-1 text-[11px] font-medium tracking-wider text-fg uppercase">
           After
         </figcaption>

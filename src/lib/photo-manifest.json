@@ -1,0 +1,191 @@
+{
+  "/work/after-driveway.jpg": {
+    "w": 1400,
+    "h": 1050,
+    "zoom": "/work/zoom/after-driveway.webp",
+    "zw": 2800,
+    "zh": 2100,
+    "widths": [
+      480,
+      960,
+      1400
+    ],
+    "base": "/work/r/after-driveway"
+  },
+  "/work/black-alloy-honda-wheel-lip-rash-repair-after.jpg": {
+    "w": 1200,
+    "h": 1200,
+    "zoom": "/work/zoom/black-alloy-honda-wheel-lip-rash-repair-after.webp",
+    "zw": 2800,
+    "zh": 2800,
+    "widths": [
+      480,
+      960,
+      1200
+    ],
+    "base": "/work/r/black-alloy-honda-wheel-lip-rash-repair-after"
+  },
+  "/work/black-alloy-honda-wheel-lip-rash-repair-before.jpg": {
+    "w": 1193,
+    "h": 1200,
+    "zoom": "/work/zoom/black-alloy-honda-wheel-lip-rash-repair-before.webp",
+    "zw": 2784,
+    "zh": 2800,
+    "widths": [
+      480,
+      960,
+      1193
+    ],
+    "base": "/work/r/black-alloy-honda-wheel-lip-rash-repair-before"
+  },
+  "/work/gloss-black-honda-wheel-curb-rash-repair-after.jpg": {
+    "w": 900,
+    "h": 1200,
+    "zoom": "/work/zoom/gloss-black-honda-wheel-curb-rash-repair-after.webp",
+    "zw": 2100,
+    "zh": 2800,
+    "widths": [
+      480,
+      900
+    ],
+    "base": "/work/r/gloss-black-honda-wheel-curb-rash-repair-after"
+  },
+  "/work/gloss-black-honda-wheel-curb-rash-repair-before.jpg": {
+    "w": 900,
+    "h": 1200,
+    "zoom": "/work/zoom/gloss-black-honda-wheel-curb-rash-repair-before.webp",
+    "zw": 2100,
+    "zh": 2800,
+    "widths": [
+      480,
+      900
+    ],
+    "base": "/work/r/gloss-black-honda-wheel-curb-rash-repair-before"
+  },
+  "/work/silver-tesla-wheel-curb-rash-repair-after.jpg": {
+    "w": 1200,
+    "h": 900,
+    "zoom": "/work/zoom/silver-tesla-wheel-curb-rash-repair-after.webp",
+    "zw": 2800,
+    "zh": 2100,
+    "widths": [
+      480,
+      960,
+      1200
+    ],
+    "base": "/work/r/silver-tesla-wheel-curb-rash-repair-after"
+  },
+  "/work/silver-tesla-wheel-curb-rash-repair-before.jpg": {
+    "w": 1200,
+    "h": 900,
+    "zoom": "/work/zoom/silver-tesla-wheel-curb-rash-repair-before.webp",
+    "zw": 2800,
+    "zh": 2100,
+    "widths": [
+      480,
+      960,
+      1200
+    ],
+    "base": "/work/r/silver-tesla-wheel-curb-rash-repair-before"
+  },
+  "/work/tesla-after-full.jpg": {
+    "w": 693,
+    "h": 1500,
+    "zoom": "/work/zoom/tesla-after-full.webp",
+    "zw": 1294,
+    "zh": 2800,
+    "widths": [
+      480,
+      693
+    ],
+    "base": "/work/r/tesla-after-full"
+  },
+  "/work/tesla-after-portrait.jpg": {
+    "w": 960,
+    "h": 1200,
+    "zoom": "/work/zoom/tesla-after-portrait.webp",
+    "zw": 2240,
+    "zh": 2800,
+    "widths": [
+      480,
+      960
+    ],
+    "base": "/work/r/tesla-after-portrait"
+  },
+  "/work/tesla-after.jpg": {
+    "w": 1200,
+    "h": 1200,
+    "zoom": "/work/zoom/tesla-after.webp",
+    "zw": 2800,
+    "zh": 2800,
+    "widths": [
+      480,
+      960,
+      1200
+    ],
+    "base": "/work/r/tesla-after"
+  },
+  "/work/tesla-before-43.jpg": {
+    "w": 1400,
+    "h": 1050,
+    "zoom": "/work/zoom/tesla-before-43.webp",
+    "zw": 2800,
+    "zh": 2100,
+    "widths": [
+      480,
+      960,
+      1400
+    ],
+    "base": "/work/r/tesla-before-43"
+  },
+  "/work/tesla-before-full.jpg": {
+    "w": 1500,
+    "h": 693,
+    "zoom": "/work/zoom/tesla-before-full.webp",
+    "zw": 2800,
+    "zh": 1294,
+    "widths": [
+      480,
+      960,
+      1440
+    ],
+    "base": "/work/r/tesla-before-full"
+  },
+  "/work/tesla-before.jpg": {
+    "w": 1100,
+    "h": 1100,
+    "zoom": "/work/zoom/tesla-before.webp",
+    "zw": 2800,
+    "zh": 2800,
+    "widths": [
+      480,
+      960,
+      1100
+    ],
+    "base": "/work/r/tesla-before"
+  },
+  "/work/two-tone-honda-wheel-rim-scuff-repair-after.jpg": {
+    "w": 900,
+    "h": 1200,
+    "zoom": "/work/zoom/two-tone-honda-wheel-rim-scuff-repair-after.webp",
+    "zw": 2100,
+    "zh": 2800,
+    "widths": [
+      480,
+      900
+    ],
+    "base": "/work/r/two-tone-honda-wheel-rim-scuff-repair-after"
+  },
+  "/work/two-tone-honda-wheel-rim-scuff-repair-before.jpg": {
+    "w": 900,
+    "h": 1200,
+    "zoom": "/work/zoom/two-tone-honda-wheel-rim-scuff-repair-before.webp",
+    "zw": 2100,
+    "zh": 2800,
+    "widths": [
+      480,
+      900
+    ],
+    "base": "/work/r/two-tone-honda-wheel-rim-scuff-repair-before"
+  }
+}

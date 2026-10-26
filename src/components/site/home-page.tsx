@@ -1,3 +1,5 @@
+import { Testimonials } from "@/components/site/testimonials";
+import { ZoomPhoto } from "@/components/photos/photo";
 import { Link } from "@tanstack/react-router";
 import {
   Clock,
@@ -55,6 +57,7 @@ export function HomePage() {
         <Pricing />
         <Honesty />
         <Gallery />
+        <Testimonials />
         <Area />
         <About />
         <Faq />
@@ -103,11 +106,14 @@ function Hero() {
         </div>
         <div className="relative">
           <figure className="relative overflow-hidden rounded-xl bg-surface-2">
-            <img
+            <ZoomPhoto
               src="/work/tesla-after.jpg"
               alt="Tesla wheel after mobile curb rash repair"
+              gallery={[{ src: "/work/tesla-before.jpg", alt: "Tesla wheel with curb rash before on-car repair" }, { src: "/work/tesla-after.jpg", alt: "Tesla wheel after mobile curb rash repair" }]}
+              sizes="(min-width: 1024px) 560px, 100vw"
               className="aspect-square w-full object-cover"
               fetchPriority="high"
+              loading="eager"
               width={800}
               height={800}
             />
@@ -115,9 +121,11 @@ function Hero() {
               After
             </figcaption>
             <figure className="absolute bottom-3 left-3 w-[44%] max-w-56 overflow-hidden rounded-md border border-fg/25 shadow-lg">
-              <img
+              <ZoomPhoto
                 src="/work/tesla-before.jpg"
                 alt="Tesla wheel with curb rash before on-car repair"
+                gallery={[{ src: "/work/tesla-before.jpg", alt: "Tesla wheel with curb rash before on-car repair" }, { src: "/work/tesla-after.jpg", alt: "Tesla wheel after mobile curb rash repair" }]}
+                sizes="240px"
                 className="aspect-square w-full object-cover"
                 width={400}
                 height={400}

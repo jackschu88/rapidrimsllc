@@ -1,0 +1,20 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const CREDIT_CENTS: number;
+export const NEUTRAL_REJECT_REASONS: readonly string[];
+export const SHARE_PLATFORMS: readonly string[];
+export const FACEBOOK_REVIEWS_URL: string;
+export const RATE_LIMIT_PER_HOUR: number;
+export function normalizePhone(input: unknown): string | null;
+export function displayNameFrom(name: unknown): string;
+export function validateSubmission(raw: any): { ok: boolean; errors: Record<string, string>; value: any };
+export function submitReview(sql: any, raw: any, opts?: { ipHash?: string | null }): Promise<any>;
+export function listPublicReviews(sql: any, limit?: number): Promise<{ reviews: any[]; count: number; average: number }>;
+export function listForModeration(sql: any, status?: string): Promise<any[]>;
+export function moderateReview(sql: any, id: string, action: string, reason?: string | null, by?: string | null): Promise<{ ok: boolean; error?: string }>;
+export function deleteReview(sql: any, id: string): Promise<{ ok: boolean }>;
+export function creditBalance(sql: any, phone: unknown): Promise<any>;
+export function redeemCredits(sql: any, phone: unknown, opts?: { maxCents?: number; note?: string | null; bookingId?: string | null }): Promise<any>;
+export function applyCreditsToBooking(sql: any, b: { phone: string; name?: string | null; subtotalCents: number; service?: string | null; scheduledAt?: string | null }): Promise<any>;
+export function logShareClick(sql: any, reviewId: string, platform: string): Promise<{ ok: boolean }>;
+export function shareLinks(env?: Record<string, string | undefined>): { google: string | null; facebook: string };
+export function isAdminEmail(email: unknown, adminEmailsEnv: unknown): boolean;
